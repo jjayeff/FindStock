@@ -19,17 +19,29 @@ namespace FindStock
         private static string Username = ConfigurationManager.AppSettings["DatabaseUsername"];
         private static string Password = ConfigurationManager.AppSettings["DatabasePassword"];
         private static Plog log = new Plog(true);
+        public static List<string> set50 = new List<string>();
+        public static List<string> set100 = new List<string>();
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
         // | Model                                                           |
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-        private class User
+        private class Stock
         {
 
-            public User() { }
+            public Stock() { }
 
             // Properties.
-            public string username { get; set; }
-            public string password { get; set; }
+            public string Symbol { get; set; }
+            public string Market { get; set; }
+            public string Industry { get; set; }
+            public string Sector { get; set; }
+            public string SET50 { get; set; }
+            public string SET100 { get; set; }
+            public string Return_rate { get; set; }
+            public string Price { get; set; }
+            public string IAA { get; set; }
+            public string Growth_stock { get; set; }
+            public string Stock_dividend { get; set; }
+            public string LastUpdate { get; set; }
         }
         private class FinanceInfo
         {
@@ -135,6 +147,25 @@ namespace FindStock
             public string Median_TargetPrice { get; set; }
             public string LastUpdate { get; set; }
         }
+        private class GrowthStock
+        {
+
+            public GrowthStock() { }
+
+            // Properties.
+            public string Symbol { get; set; }
+            public string Net_rate { get; set; }
+            public string Assets_rate { get; set; }
+            public string Price_rate { get; set; }
+            public string LastUpdate { get; set; }
+        }
+        struct GS
+        {
+            public string Year;
+            public double Assets;
+            public double Netprofit;
+            public double Lastprice;
+        }
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
         // | Main Function                                                   |
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -169,14 +200,18 @@ namespace FindStock
             Symbol(ref symbols, "MEDIA");
             Symbol(ref symbols, "PROF");
             Symbol(ref symbols, "TOURISM");
+            Symbol(ref symbols, "TRANS");
             Symbol(ref symbols, "ETRON");
             Symbol(ref symbols, "ICT");
+            Symbol(ref set50, "SET50");
+            Symbol(ref set100, "SET100");
 
             for (var i = 0; i < symbols.Count; i++)
             {
                 log.LOGI($"Run {i} {symbols[i]}");
                 IAAConsensusScraping(symbols[i]);
                 CompanyHighlights(symbols[i]);
+                StockScraping(symbols[i]);
             }
             log.LOGI(" Success update data FindStock");
         }
@@ -202,7 +237,6 @@ namespace FindStock
                     utf8_String = utf8_String.Substring(2, utf8_String.Length - 4);
                     symbols.Add(utf8_String);
                 }
-
             }
         }
         private static void CompanyHighlights(string symbol)
@@ -473,7 +507,7 @@ namespace FindStock
             foreach (HtmlNode node in doc1.DocumentNode.SelectNodes("//div[@class='round-border']"))
             {
                 iaa_consensus_summary.Symbol = symbol;
-                iaa_consensus_summary.LastPrice = node.SelectSingleNode(".//div[@class='col-xs-8']//div[@class='text-right']//h1").InnerText;
+                iaa_consensus_summary.LastPrice = CutStrignMoney(node.SelectSingleNode(".//div[@class='col-xs-8']//div[@class='text-right']//h1").InnerText);
                 string result = "";
                 foreach (HtmlNode row in node.SelectNodes(".//div[@class='row separate-content']//div[@class='row']"))
                 {
@@ -574,9 +608,199 @@ namespace FindStock
             GC.Collect();
             log.LOGI($"Success {symbol}");
         }
+        private static void StockScraping(string symbol)
+        {
+            string symbol_url = symbol;
+            if (symbol.IndexOf(" & ") > -1)
+                symbol_url = symbol.Replace(" & ", "+%26+");
+            else if (symbol.IndexOf("&") > -1)
+                symbol_url = symbol.Replace("&", "%26");
+
+            var url = $"https://www.set.or.th/set/companyprofile.do?symbol={symbol_url}&ssoPageId=4&language=th&country=TH";
+            // Using HtmlAgilityPack
+            var Webget = new HtmlWeb();
+            var doc = Webget.Load(url);
+
+            Stock stock = new Stock();
+            stock.Symbol = symbol;
+            stock.LastUpdate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            foreach (var value in set50)
+                if (value == symbol)
+                {
+                    stock.SET50 = "1";
+                    break;
+                }
+                else
+                    stock.SET50 = "0";
+            foreach (var value in set100)
+                if (value == symbol)
+                {
+                    stock.SET100 = (value == symbol) ? "1" : "0";
+                    break;
+                }
+                else
+                    stock.SET100 = "0";
+
+            foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//td//div[@class='row']//div[@class='row']//div[@class='col-xs-3 col-md-7']"))
+            {
+                string head = node.SelectSingleNode("..//div[@class='col-xs-3 col-md-7']").InnerText;
+                string body = node.SelectSingleNode("..//div[@class='col-xs-9 col-md-5']").InnerText;
+                if (head == "ตลาด")
+                    stock.Market = body;
+                else if (head == "กลุ่มอุตสาหกรรม")
+                    stock.Industry = body;
+                else if (head == "หมวดธุรกิจ")
+                    stock.Sector = body;
+            }
+
+            url = $"https://www.finnomena.com/stock/{symbol_url}";
+            var Webget1 = new HtmlWeb();
+            var doc1 = Webget.Load(url);
+            foreach (HtmlNode node in doc1.DocumentNode.SelectNodes("//div[@class='performance-a-year']//p"))
+            {
+                string utf8_String = node.InnerText;
+                byte[] bytes = Encoding.UTF8.GetBytes(utf8_String);
+                utf8_String = Encoding.UTF8.GetString(bytes);
+                utf8_String = utf8_String.Replace("  ", String.Empty);
+                if (utf8_String.IndexOf("%") > -1)
+                    utf8_String = utf8_String.Substring(1, utf8_String.IndexOf("%") - 2);
+                if (utf8_String == "N/A")
+                    utf8_String = null;
+                stock.Return_rate = utf8_String;
+            }
+
+            IAAPersent(ref stock, "iaa_consensus_summary", $"Symbol = '{stock.Symbol}'");
+            GrowthStockPersent(ref stock);
+
+            /*log.LOGD($"Symbol: {stock.Symbol}");
+            log.LOGD($"Market: {stock.Market}");
+            log.LOGD($"Industry: {stock.Industry}");
+            log.LOGD($"Sector: {stock.Sector}");
+            log.LOGD($"SET50: {stock.SET50}");
+            log.LOGD($"SET100: {stock.SET100}");
+            log.LOGD($"Return_rate: {stock.Return_rate}");
+            log.LOGD($"Price: {stock.Price}");
+            log.LOGD($"IAA: {stock.IAA}");
+            log.LOGD($"Growth_stock: {stock.Growth_stock}");
+            log.LOGD($"Stock_dividend: {stock.Stock_dividend}");
+            log.LOGD($"LastUpdate: {stock.LastUpdate}");*/
+
+            // Insert or Update datebase stock
+            StatementDatabase(stock, "stock", $"Symbol='{stock.Symbol}'");
+            log.LOGI($"Success {symbol}");
+        }
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
         // | Database Function                                               |
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+        private static void GrowthStockPersent(ref Stock stock)
+        {
+            string sql = "";
+            string connetionString;
+            SqlConnection cnn;
+            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+
+            sql = $"SELECT {Database}.dbo.finance_info_yearly.Symbol, " +
+                $"{Database}.dbo.finance_info_yearly.Year, " +
+                $"{Database}.dbo.finance_info_yearly.Assets, " +
+                $"{Database}.dbo.finance_info_yearly.NetProfit, " +
+                $"{Database}.dbo.finance_stat_yearly.Lastprice " +
+                $"FROM {Database}.dbo.finance_info_yearly " +
+                $"INNER JOIN {Database}.dbo.finance_stat_yearly " +
+                $"ON {Database}.dbo.finance_info_yearly.Symbol = {Database}.dbo.finance_stat_yearly.Symbol " +
+                $"AND {Database}.dbo.finance_info_yearly.Year = {Database}.dbo.finance_stat_yearly.Year " +
+                $"AND {Database}.dbo.finance_info_yearly.Symbol = '{stock.Symbol}' ";
+            SqlCommand command = new SqlCommand(sql, cnn);
+            command.Parameters.AddWithValue("@zip", "india");
+
+            List<GS> netprofit = new List<GS>();
+            GrowthStock growth_stock = new GrowthStock();
+            growth_stock.Symbol = stock.Symbol;
+            growth_stock.LastUpdate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    GS tmp;
+                    tmp.Year = String.Format("{0}", reader["Year"]);
+                    tmp.Assets = Convert.ToDouble(String.Format("{0}", reader["Assets"]));
+                    tmp.Netprofit = Convert.ToDouble(String.Format("{0}", reader["NetProfit"]));
+                    tmp.Lastprice = Convert.ToDouble(String.Format("{0}", reader["Lastprice"]));
+                    netprofit.Add(tmp);
+                }
+            }
+
+            // Net growth continues persent
+            netprofit = netprofit.OrderByDescending(o => o.Year).ToList();
+            int i = 0;
+            List<GS> netprofit_rate = new List<GS>();
+            foreach (var value in netprofit)
+            {
+
+                netprofit_rate.Add(value);
+                if (i++ > 9)
+                    break;
+            }
+            netprofit_rate = netprofit_rate.OrderBy(o => o.Year).ToList();
+            int x = 0, y = 0, z = 0;
+            for (int j = 0; j < i - 1; j++)
+            {
+                if (netprofit_rate[j + 1].Assets > netprofit_rate[j].Assets)
+                    x++;
+                if (netprofit_rate[j + 1].Netprofit > netprofit_rate[j].Netprofit)
+                    y++;
+                if (netprofit_rate[j + 1].Lastprice > netprofit_rate[j].Lastprice)
+                    z++;
+            }
+
+            if (i > 1)
+            {
+                double Assets_rate = Math.Round((double)(x * 100 / (double)(i - 1)));
+                double Net_rate = Math.Round((double)(y * 100 / (double)(i - 1)));
+                double Price_rate = Math.Round((double)(z * 100 / (double)(i - 1)));
+                stock.Growth_stock = ((Assets_rate + Net_rate + Price_rate) / 3).ToString();
+                growth_stock.Assets_rate = Assets_rate.ToString();
+                growth_stock.Net_rate = Net_rate.ToString();
+                growth_stock.Price_rate = Price_rate.ToString();
+            }
+
+            StatementDatabase(growth_stock, "growth_stock", $"Symbol='{stock.Symbol}'");
+
+            cnn.Close();
+        }
+        private static void IAAPersent(ref Stock stock, string db, string where)
+        {
+            string sql = "";
+            string connetionString;
+            SqlConnection cnn;
+            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+
+            sql = $"Select * from dbo.{db} where {where}";
+            SqlCommand command = new SqlCommand(sql, cnn);
+            command.Parameters.AddWithValue("@zip", "india");
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    if (String.Format("{0}", reader["Average_TargetPrice"]) != "")
+                    {
+                        double last_price = Convert.ToDouble(String.Format("{0}", reader["LastPrice"]));
+                        double target_price = Convert.ToDouble(String.Format("{0}", reader["Average_TargetPrice"]));
+                        stock.Price = Math.Round((target_price - last_price) * 100 / last_price, 2).ToString();
+                        double buy = Convert.ToInt32(String.Format("{0}", reader["Buy"]));
+                        double hold = Convert.ToInt32(String.Format("{0}", reader["Hold"]));
+                        double sell = Convert.ToInt32(String.Format("{0}", reader["Sell"]));
+                        if ((buy + hold + sell) > 0)
+                            stock.IAA = Math.Round((buy + (hold / 2)) * 100 / (buy + hold + sell), 2).ToString();
+                    }
+                }
+            }
+
+            cnn.Close();
+        }
         private static void StatementDatabase(object item, string db, string where, bool none_update = false)
         {
             string sql = "";

@@ -4,7 +4,6 @@ C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\bin\Release\FindStock.pdb
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\bin\Release\HtmlAgilityPack.dll
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\bin\Release\HtmlAgilityPack.pdb
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\bin\Release\HtmlAgilityPack.xml
-C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.csprojAssemblyReference.cache
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.csproj.CoreCompileInputs.cache
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.csproj.CopyComplete
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.exe
