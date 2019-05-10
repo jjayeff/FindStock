@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,6 +32,7 @@ namespace FindStock
 
             // Properties.
             public string Symbol { get; set; }
+            public string Name { get; set; }
             public string Market { get; set; }
             public string Industry { get; set; }
             public string Sector { get; set; }
@@ -159,12 +161,29 @@ namespace FindStock
             public string Price_rate { get; set; }
             public string LastUpdate { get; set; }
         }
+        private class StockDividend
+        {
+
+            public StockDividend() { }
+
+            // Properties.
+            public string Symbol { get; set; }
+            public string DIv_rate { get; set; }
+            public string More_one_rate { get; set; }
+            public string Double_rate { get; set; }
+            public string LastUpdate { get; set; }
+        }
         struct GS
         {
             public string Year;
             public double Assets;
             public double Netprofit;
             public double Lastprice;
+        }
+        struct SD
+        {
+            public string Year;
+            public double Dvd_Yield;
         }
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
         // | Main Function                                                   |
@@ -226,17 +245,24 @@ namespace FindStock
             var Webget1 = new HtmlWeb();
             var doc1 = Webget1.Load(url1);
 
-            foreach (HtmlNode node in doc1.DocumentNode.SelectNodes("//td//a"))
+            try
             {
-                string utf8_String = node.InnerText;
-                byte[] bytes = Encoding.UTF8.GetBytes(utf8_String);
-                utf8_String = Encoding.UTF8.GetString(bytes);
-                utf8_String = utf8_String.Replace("  ", String.Empty);
-                if (utf8_String.IndexOf("\n") >= 0)
+                foreach (HtmlNode node in doc1.DocumentNode.SelectNodes("//td//a"))
                 {
-                    utf8_String = utf8_String.Substring(2, utf8_String.Length - 4);
-                    symbols.Add(utf8_String);
+                    string utf8_String = node.InnerText;
+                    byte[] bytes = Encoding.UTF8.GetBytes(utf8_String);
+                    utf8_String = Encoding.UTF8.GetString(bytes);
+                    utf8_String = utf8_String.Replace("  ", String.Empty);
+                    if (utf8_String.IndexOf("\n") >= 0)
+                    {
+                        utf8_String = utf8_String.Substring(2, utf8_String.Length - 4);
+                        symbols.Add(utf8_String);
+                    }
                 }
+            }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url1}");
             }
         }
         private static void CompanyHighlights(string symbol)
@@ -282,115 +308,129 @@ namespace FindStock
             // tmp variable
             var run = "start";
 
-            foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//tr//td"))
+            try
             {
-                string utf8_String = node.ChildNodes[0].InnerHtml;
-                byte[] bytes = Encoding.UTF8.GetBytes(utf8_String);
-                utf8_String = Encoding.UTF8.GetString(bytes);
-                int index = utf8_String.IndexOf("&");
+                foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//tr//td"))
+                {
+                    string utf8_String = node.ChildNodes[0].InnerHtml;
+                    byte[] bytes = Encoding.UTF8.GetBytes(utf8_String);
+                    utf8_String = Encoding.UTF8.GetString(bytes);
+                    int index = utf8_String.IndexOf("&");
 
-                if (index > 0)
-                    utf8_String = utf8_String.Substring(0, utf8_String.IndexOf("&"));
+                    if (index > 0)
+                        utf8_String = utf8_String.Substring(0, utf8_String.IndexOf("&"));
 
-                if (utf8_String == "N/A" || utf8_String == "N.A." || utf8_String == "-")
-                    utf8_String = "null";
+                    if (utf8_String == "N/A" || utf8_String == "N.A." || utf8_String == "-")
+                        utf8_String = "null";
 
-                if (utf8_String == "สินทรัพย์รวม")
-                    run = utf8_String;
-                else if (utf8_String == "หนี้สินรวม")
-                    run = utf8_String;
-                else if (utf8_String == "ส่วนของผู้ถือหุ้น")
-                    run = utf8_String;
-                else if (utf8_String == "มูลค่าหุ้นที่เรียกชำระแล้ว")
-                    run = utf8_String;
-                else if (utf8_String == "รายได้รวม")
-                    run = utf8_String;
-                else if (utf8_String == "กำไรสุทธิ")
-                    run = utf8_String;
-                else if (utf8_String == "กำไรต่อหุ้น (บาท)")
-                    run = utf8_String;
-                else if (utf8_String == "ROA(%)")
-                    run = utf8_String;
-                else if (utf8_String == "ROE(%)")
-                    run = utf8_String;
-                else if (utf8_String == "อัตรากำไรสุทธิ(%)")
-                    run = utf8_String;
-                else if (utf8_String == "ราคาล่าสุด(บาท)")
-                    run = utf8_String;
-                else if (utf8_String == "มูลค่าหลักทรัพย์ตามราคาตลาด")
-                    run = utf8_String;
-                else if (utf8_String == "วันที่ของงบการเงินที่ใช้คำนวณค่าสถิติ")
-                    run = utf8_String;
-                else if (utf8_String == "P/E (เท่า)")
-                    run = utf8_String;
-                else if (utf8_String == "P/BV (เท่า)")
-                    run = utf8_String;
-                else if (utf8_String == "มูลค่าหุ้นทางบัญชีต่อหุ้น (บาท)")
-                    run = utf8_String;
-                else if (utf8_String == "อัตราส่วนเงินปันผลตอบแทน(%)")
-                    run = utf8_String;
+                    if (utf8_String == "สินทรัพย์รวม")
+                        run = utf8_String;
+                    else if (utf8_String == "หนี้สินรวม")
+                        run = utf8_String;
+                    else if (utf8_String == "ส่วนของผู้ถือหุ้น")
+                        run = utf8_String;
+                    else if (utf8_String == "มูลค่าหุ้นที่เรียกชำระแล้ว")
+                        run = utf8_String;
+                    else if (utf8_String == "รายได้รวม")
+                        run = utf8_String;
+                    else if (utf8_String == "กำไรสุทธิ")
+                        run = utf8_String;
+                    else if (utf8_String == "กำไรต่อหุ้น (บาท)")
+                        run = utf8_String;
+                    else if (utf8_String == "ROA(%)")
+                        run = utf8_String;
+                    else if (utf8_String == "ROE(%)")
+                        run = utf8_String;
+                    else if (utf8_String == "อัตรากำไรสุทธิ(%)")
+                        run = utf8_String;
+                    else if (utf8_String == "ราคาล่าสุด(บาท)")
+                        run = utf8_String;
+                    else if (utf8_String == "มูลค่าหลักทรัพย์ตามราคาตลาด")
+                        run = utf8_String;
+                    else if (utf8_String == "วันที่ของงบการเงินที่ใช้คำนวณค่าสถิติ")
+                        run = utf8_String;
+                    else if (utf8_String == "P/E (เท่า)")
+                        run = utf8_String;
+                    else if (utf8_String == "P/BV (เท่า)")
+                        run = utf8_String;
+                    else if (utf8_String == "มูลค่าหุ้นทางบัญชีต่อหุ้น (บาท)")
+                        run = utf8_String;
+                    else if (utf8_String == "อัตราส่วนเงินปันผลตอบแทน(%)")
+                        run = utf8_String;
 
-                if (utf8_String != run)
-                    if (run == "สินทรัพย์รวม")
-                        asset.Add(utf8_String);
-                    else if (run == "หนี้สินรวม")
-                        liabilities.Add(utf8_String);
-                    else if (run == "ส่วนของผู้ถือหุ้น")
-                        equity.Add(utf8_String);
-                    else if (run == "มูลค่าหุ้นที่เรียกชำระแล้ว")
-                        paid_up_cap.Add(utf8_String);
-                    else if (run == "รายได้รวม")
-                        revenue.Add(utf8_String);
-                    else if (run == "กำไรสุทธิ")
-                        net_profit.Add(utf8_String);
-                    else if (run == "กำไรต่อหุ้น (บาท)")
-                        eps.Add(utf8_String);
-                    else if (run == "ROA(%)")
-                        roa.Add(utf8_String);
-                    else if (run == "ROE(%)")
-                        roe.Add(utf8_String);
-                    else if (run == "อัตรากำไรสุทธิ(%)")
-                        net_profit_margin.Add(utf8_String);
-                    else if (run == "ราคาล่าสุด(บาท)")
-                        lastprice.Add(utf8_String);
-                    else if (run == "มูลค่าหลักทรัพย์ตามราคาตลาด")
-                        market_cap.Add(utf8_String);
-                    else if (run == "วันที่ของงบการเงินที่ใช้คำนวณค่าสถิติ")
-                        fs_date.Add(utf8_String);
-                    else if (run == "P/E (เท่า)")
-                        pe.Add(utf8_String);
-                    else if (run == "P/BV (เท่า)")
-                        pbv.Add(utf8_String);
-                    else if (run == "มูลค่าหุ้นทางบัญชีต่อหุ้น (บาท)")
-                        book_value_share.Add(utf8_String);
-                    else if (run == "อัตราส่วนเงินปันผลตอบแทน(%)")
-                        dvd_yield.Add(utf8_String);
+                    if (utf8_String != run)
+                        if (run == "สินทรัพย์รวม")
+                            asset.Add(utf8_String);
+                        else if (run == "หนี้สินรวม")
+                            liabilities.Add(utf8_String);
+                        else if (run == "ส่วนของผู้ถือหุ้น")
+                            equity.Add(utf8_String);
+                        else if (run == "มูลค่าหุ้นที่เรียกชำระแล้ว")
+                            paid_up_cap.Add(utf8_String);
+                        else if (run == "รายได้รวม")
+                            revenue.Add(utf8_String);
+                        else if (run == "กำไรสุทธิ")
+                            net_profit.Add(utf8_String);
+                        else if (run == "กำไรต่อหุ้น (บาท)")
+                            eps.Add(utf8_String);
+                        else if (run == "ROA(%)")
+                            roa.Add(utf8_String);
+                        else if (run == "ROE(%)")
+                            roe.Add(utf8_String);
+                        else if (run == "อัตรากำไรสุทธิ(%)")
+                            net_profit_margin.Add(utf8_String);
+                        else if (run == "ราคาล่าสุด(บาท)")
+                            lastprice.Add(utf8_String);
+                        else if (run == "มูลค่าหลักทรัพย์ตามราคาตลาด")
+                            market_cap.Add(utf8_String);
+                        else if (run == "วันที่ของงบการเงินที่ใช้คำนวณค่าสถิติ")
+                            fs_date.Add(utf8_String);
+                        else if (run == "P/E (เท่า)")
+                            pe.Add(utf8_String);
+                        else if (run == "P/BV (เท่า)")
+                            pbv.Add(utf8_String);
+                        else if (run == "มูลค่าหุ้นทางบัญชีต่อหุ้น (บาท)")
+                            book_value_share.Add(utf8_String);
+                        else if (run == "อัตราส่วนเงินปันผลตอบแทน(%)")
+                            dvd_yield.Add(utf8_String);
+                }
+            }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url}");
             }
 
-            foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//th"))
+            try
             {
-                string utf8_String = node.ChildNodes[0].InnerHtml;
-                byte[] bytes = Encoding.UTF8.GetBytes(utf8_String);
-                utf8_String = Encoding.UTF8.GetString(bytes);
-                if (utf8_String == "งวดงบการเงิน<br> ณ วันที่")
-                    run = utf8_String;
-                if (utf8_String == "ค่าสถิติสำคัญ<br> ณ วันที่")
-                    run = utf8_String;
+                foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//th"))
+                {
+                    string utf8_String = node.ChildNodes[0].InnerHtml;
+                    byte[] bytes = Encoding.UTF8.GetBytes(utf8_String);
+                    utf8_String = Encoding.UTF8.GetString(bytes);
+                    if (utf8_String == "งวดงบการเงิน<br> ณ วันที่")
+                        run = utf8_String;
+                    if (utf8_String == "ค่าสถิติสำคัญ<br> ณ วันที่")
+                        run = utf8_String;
 
-                if (utf8_String != run)
-                    if (run == "งวดงบการเงิน<br> ณ วันที่" && utf8_String.IndexOf("/") >= 0)
-                    {
-                        var index = utf8_String.IndexOf(">") + 1;
-                        date_info.Add(utf8_String.Substring(index, utf8_String.Length - index));
-                        year_info.Add(utf8_String.Substring(utf8_String.Length - 4, 4));
-                        quarter.Add(utf8_String.Substring(0, index - 4));
-                    }
-                    else if (run == "ค่าสถิติสำคัญ<br> ณ วันที่")
-                    {
-                        date_stat.Add(utf8_String);
-                        year_stat.Add(utf8_String.Substring(utf8_String.Length - 4, 4));
-                    }
+                    if (utf8_String != run)
+                        if (run == "งวดงบการเงิน<br> ณ วันที่" && utf8_String.IndexOf("/") >= 0)
+                        {
+                            var index = utf8_String.IndexOf(">") + 1;
+                            date_info.Add(utf8_String.Substring(index, utf8_String.Length - index));
+                            year_info.Add(utf8_String.Substring(utf8_String.Length - 4, 4));
+                            quarter.Add(utf8_String.Substring(0, index - 4));
+                        }
+                        else if (run == "ค่าสถิติสำคัญ<br> ณ วันที่")
+                        {
+                            date_stat.Add(utf8_String);
+                            year_stat.Add(utf8_String.Substring(utf8_String.Length - 4, 4));
+                        }
 
+                }
+            }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url}");
             }
 
             List<FinanceInfo> finance_info_yearly = new List<FinanceInfo>();
@@ -504,95 +544,112 @@ namespace FindStock
             var doc1 = Webget1.Load(url);
 
             IAAConsensusSummary iaa_consensus_summary = new IAAConsensusSummary();
-            foreach (HtmlNode node in doc1.DocumentNode.SelectNodes("//div[@class='round-border']"))
+
+            try
             {
-                iaa_consensus_summary.Symbol = symbol;
-                iaa_consensus_summary.LastPrice = CutStrignMoney(node.SelectSingleNode(".//div[@class='col-xs-8']//div[@class='text-right']//h1").InnerText);
-                string result = "";
-                foreach (HtmlNode row in node.SelectNodes(".//div[@class='row separate-content']//div[@class='row']"))
+                foreach (HtmlNode node in doc1.DocumentNode.SelectNodes("//div[@class='round-border']"))
                 {
-                    foreach (HtmlNode cell in row.SelectNodes("div"))
-                        result += $"{cell.InnerText.Replace("\r\n", "").Replace("\n", "").Replace("\r", "")} ";
+                    iaa_consensus_summary.Symbol = symbol;
+                    iaa_consensus_summary.LastPrice = CutStrignMoney(node.SelectSingleNode(".//div[@class='col-xs-8']//div[@class='text-right']//h1").InnerText);
+                    string result = "";
+                    foreach (HtmlNode row in node.SelectNodes(".//div[@class='row separate-content']//div[@class='row']"))
+                    {
+                        foreach (HtmlNode cell in row.SelectNodes("div"))
+                            result += $"{cell.InnerText.Replace("\r\n", "").Replace("\n", "").Replace("\r", "")} ";
+                    }
+                    var parts = result.Split(' ');
+                    iaa_consensus_summary.Buy = parts[1];
+                    iaa_consensus_summary.Hold = parts[4];
+                    iaa_consensus_summary.Sell = parts[7];
+                    iaa_consensus_summary.LastUpdate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 }
-                var parts = result.Split(' ');
-                iaa_consensus_summary.Buy = parts[1];
-                iaa_consensus_summary.Hold = parts[4];
-                iaa_consensus_summary.Sell = parts[7];
-                iaa_consensus_summary.LastUpdate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url}");
+            }
+
             List<IAAConsensus> iaa_consensus = new List<IAAConsensus>();
             var index = 1;
-            foreach (HtmlNode row in doc1.DocumentNode.SelectNodes("//tr"))
-            {
-                string result = "";
-                foreach (HtmlNode cell in row.SelectNodes("th|td"))
-                {
-                    result += $"{cell.InnerText.Replace("\r\n", "").Replace("\n", "").Replace("\r", "").Replace(" ", "")} ";
-                }
-                var parts = result.Split(' ');
-                if (index.ToString() == parts[0])
-                {
-                    var tmp = new IAAConsensus();
-                    tmp.Symbol = symbol;
-                    tmp.Broker = parts[1];
-                    tmp.EPS_Year = parts[2] == "-" ? null : CutStrignMoney(parts[2]);
-                    tmp.EPS_Year_Change = parts[3] == "-" ? null : CutStrignMoney(parts[3]);
-                    tmp.EPS_2Year = parts[4] == "-" ? null : CutStrignMoney(parts[4]);
-                    tmp.EPS_2Year_Change = parts[5] == "-" ? null : CutStrignMoney(parts[5]);
-                    tmp.PE = parts[6] == "-" ? null : CutStrignMoney(parts[6]);
-                    tmp.PBV = parts[7] == "-" ? null : CutStrignMoney(parts[7]);
-                    tmp.DIV = parts[8] == "-" ? null : CutStrignMoney(parts[8]);
-                    tmp.TargetPrice = parts[9] == "-" ? null : CutStrignMoney(parts[9]);
-                    tmp.Rec = parts[10];
-                    tmp.LastUpdate = ChangeDateFormat2(parts[11]);
-                    index++;
-                    iaa_consensus.Add(tmp);
-                }
-                else if (parts[0] == "Average")
-                {
-                    iaa_consensus_summary.Average_EPS_Year = parts[1] == "-" ? null : CutStrignMoney(parts[1]);
-                    iaa_consensus_summary.Average_EPS_Year_Change = parts[2] == "-" ? null : CutStrignMoney(parts[2]);
-                    iaa_consensus_summary.Average_EPS_2Year = parts[3] == "-" ? null : CutStrignMoney(parts[3]);
-                    iaa_consensus_summary.Average_EPS_2Year_Change = parts[4] == "-" ? null : CutStrignMoney(parts[4]);
-                    iaa_consensus_summary.Average_PE = parts[5] == "-" ? null : CutStrignMoney(parts[5]);
-                    iaa_consensus_summary.Average_PBV = parts[6] == "-" ? null : CutStrignMoney(parts[6]);
-                    iaa_consensus_summary.Average_DIV = parts[7] == "-" ? null : CutStrignMoney(parts[7]);
-                    iaa_consensus_summary.Average_TargetPrice = parts[8] == "-" ? null : CutStrignMoney(parts[8]);
-                }
-                else if (parts[0] == "High")
-                {
-                    iaa_consensus_summary.High_EPS_Year = parts[1] == "-" ? null : CutStrignMoney(parts[1]);
-                    iaa_consensus_summary.High_EPS_Year_Change = parts[2] == "-" ? null : CutStrignMoney(parts[2]);
-                    iaa_consensus_summary.High_EPS_2Year = parts[3] == "-" ? null : CutStrignMoney(parts[3]);
-                    iaa_consensus_summary.High_EPS_2Year_Change = parts[4] == "-" ? null : CutStrignMoney(parts[4]);
-                    iaa_consensus_summary.High_PE = parts[5] == "-" ? null : CutStrignMoney(parts[5]);
-                    iaa_consensus_summary.High_PBV = parts[6] == "-" ? null : CutStrignMoney(parts[6]);
-                    iaa_consensus_summary.High_DIV = parts[7] == "-" ? null : CutStrignMoney(parts[7]);
-                    iaa_consensus_summary.High_TargetPrice = parts[8] == "-" ? null : CutStrignMoney(parts[8]);
-                }
-                else if (parts[0] == "Low")
-                {
-                    iaa_consensus_summary.Low_EPS_Year = parts[1] == "-" ? null : CutStrignMoney(parts[1]);
-                    iaa_consensus_summary.Low_EPS_Year_Change = parts[2] == "-" ? null : CutStrignMoney(parts[2]);
-                    iaa_consensus_summary.Low_EPS_2Year = parts[3] == "-" ? null : CutStrignMoney(parts[3]);
-                    iaa_consensus_summary.Low_EPS_2Year_Change = parts[4] == "-" ? null : CutStrignMoney(parts[4]);
-                    iaa_consensus_summary.Low_PE = parts[5] == "-" ? null : CutStrignMoney(parts[5]);
-                    iaa_consensus_summary.Low_PBV = parts[6] == "-" ? null : CutStrignMoney(parts[6]);
-                    iaa_consensus_summary.Low_DIV = parts[7] == "-" ? null : CutStrignMoney(parts[7]);
-                    iaa_consensus_summary.Low_TargetPrice = parts[8] == "-" ? null : CutStrignMoney(parts[8]);
-                }
-                else if (parts[0] == "Median")
-                {
-                    iaa_consensus_summary.Median_EPS_Year = parts[1] == "-" ? null : CutStrignMoney(parts[1]);
-                    iaa_consensus_summary.Median_EPS_Year_Change = parts[2] == "-" ? null : CutStrignMoney(parts[2]);
-                    iaa_consensus_summary.Median_EPS_2Year = parts[3] == "-" ? null : CutStrignMoney(parts[3]);
-                    iaa_consensus_summary.Median_EPS_2Year_Change = parts[4] == "-" ? null : CutStrignMoney(parts[4]);
-                    iaa_consensus_summary.Median_PE = parts[5] == "-" ? null : CutStrignMoney(parts[5]);
-                    iaa_consensus_summary.Median_PBV = parts[6] == "-" ? null : CutStrignMoney(parts[6]);
-                    iaa_consensus_summary.Median_DIV = parts[7] == "-" ? null : CutStrignMoney(parts[7]);
-                    iaa_consensus_summary.Median_TargetPrice = parts[8] == "-" ? null : CutStrignMoney(parts[8]);
-                }
 
+            try
+            {
+                foreach (HtmlNode row in doc1.DocumentNode.SelectNodes("//tr"))
+                {
+                    string result = "";
+                    foreach (HtmlNode cell in row.SelectNodes("th|td"))
+                    {
+                        result += $"{cell.InnerText.Replace("\r\n", "").Replace("\n", "").Replace("\r", "").Replace(" ", "")} ";
+                    }
+                    var parts = result.Split(' ');
+                    if (index.ToString() == parts[0])
+                    {
+                        var tmp = new IAAConsensus();
+                        tmp.Symbol = symbol;
+                        tmp.Broker = parts[1];
+                        tmp.EPS_Year = parts[2] == "-" ? null : CutStrignMoney(parts[2]);
+                        tmp.EPS_Year_Change = parts[3] == "-" ? null : CutStrignMoney(parts[3]);
+                        tmp.EPS_2Year = parts[4] == "-" ? null : CutStrignMoney(parts[4]);
+                        tmp.EPS_2Year_Change = parts[5] == "-" ? null : CutStrignMoney(parts[5]);
+                        tmp.PE = parts[6] == "-" ? null : CutStrignMoney(parts[6]);
+                        tmp.PBV = parts[7] == "-" ? null : CutStrignMoney(parts[7]);
+                        tmp.DIV = parts[8] == "-" ? null : CutStrignMoney(parts[8]);
+                        tmp.TargetPrice = parts[9] == "-" ? null : CutStrignMoney(parts[9]);
+                        tmp.Rec = parts[10];
+                        tmp.LastUpdate = ChangeDateFormat2(parts[11]);
+                        index++;
+                        iaa_consensus.Add(tmp);
+                    }
+                    else if (parts[0] == "Average")
+                    {
+                        iaa_consensus_summary.Average_EPS_Year = parts[1] == "-" ? null : CutStrignMoney(parts[1]);
+                        iaa_consensus_summary.Average_EPS_Year_Change = parts[2] == "-" ? null : CutStrignMoney(parts[2]);
+                        iaa_consensus_summary.Average_EPS_2Year = parts[3] == "-" ? null : CutStrignMoney(parts[3]);
+                        iaa_consensus_summary.Average_EPS_2Year_Change = parts[4] == "-" ? null : CutStrignMoney(parts[4]);
+                        iaa_consensus_summary.Average_PE = parts[5] == "-" ? null : CutStrignMoney(parts[5]);
+                        iaa_consensus_summary.Average_PBV = parts[6] == "-" ? null : CutStrignMoney(parts[6]);
+                        iaa_consensus_summary.Average_DIV = parts[7] == "-" ? null : CutStrignMoney(parts[7]);
+                        iaa_consensus_summary.Average_TargetPrice = parts[8] == "-" ? null : CutStrignMoney(parts[8]);
+                    }
+                    else if (parts[0] == "High")
+                    {
+                        iaa_consensus_summary.High_EPS_Year = parts[1] == "-" ? null : CutStrignMoney(parts[1]);
+                        iaa_consensus_summary.High_EPS_Year_Change = parts[2] == "-" ? null : CutStrignMoney(parts[2]);
+                        iaa_consensus_summary.High_EPS_2Year = parts[3] == "-" ? null : CutStrignMoney(parts[3]);
+                        iaa_consensus_summary.High_EPS_2Year_Change = parts[4] == "-" ? null : CutStrignMoney(parts[4]);
+                        iaa_consensus_summary.High_PE = parts[5] == "-" ? null : CutStrignMoney(parts[5]);
+                        iaa_consensus_summary.High_PBV = parts[6] == "-" ? null : CutStrignMoney(parts[6]);
+                        iaa_consensus_summary.High_DIV = parts[7] == "-" ? null : CutStrignMoney(parts[7]);
+                        iaa_consensus_summary.High_TargetPrice = parts[8] == "-" ? null : CutStrignMoney(parts[8]);
+                    }
+                    else if (parts[0] == "Low")
+                    {
+                        iaa_consensus_summary.Low_EPS_Year = parts[1] == "-" ? null : CutStrignMoney(parts[1]);
+                        iaa_consensus_summary.Low_EPS_Year_Change = parts[2] == "-" ? null : CutStrignMoney(parts[2]);
+                        iaa_consensus_summary.Low_EPS_2Year = parts[3] == "-" ? null : CutStrignMoney(parts[3]);
+                        iaa_consensus_summary.Low_EPS_2Year_Change = parts[4] == "-" ? null : CutStrignMoney(parts[4]);
+                        iaa_consensus_summary.Low_PE = parts[5] == "-" ? null : CutStrignMoney(parts[5]);
+                        iaa_consensus_summary.Low_PBV = parts[6] == "-" ? null : CutStrignMoney(parts[6]);
+                        iaa_consensus_summary.Low_DIV = parts[7] == "-" ? null : CutStrignMoney(parts[7]);
+                        iaa_consensus_summary.Low_TargetPrice = parts[8] == "-" ? null : CutStrignMoney(parts[8]);
+                    }
+                    else if (parts[0] == "Median")
+                    {
+                        iaa_consensus_summary.Median_EPS_Year = parts[1] == "-" ? null : CutStrignMoney(parts[1]);
+                        iaa_consensus_summary.Median_EPS_Year_Change = parts[2] == "-" ? null : CutStrignMoney(parts[2]);
+                        iaa_consensus_summary.Median_EPS_2Year = parts[3] == "-" ? null : CutStrignMoney(parts[3]);
+                        iaa_consensus_summary.Median_EPS_2Year_Change = parts[4] == "-" ? null : CutStrignMoney(parts[4]);
+                        iaa_consensus_summary.Median_PE = parts[5] == "-" ? null : CutStrignMoney(parts[5]);
+                        iaa_consensus_summary.Median_PBV = parts[6] == "-" ? null : CutStrignMoney(parts[6]);
+                        iaa_consensus_summary.Median_DIV = parts[7] == "-" ? null : CutStrignMoney(parts[7]);
+                        iaa_consensus_summary.Median_TargetPrice = parts[8] == "-" ? null : CutStrignMoney(parts[8]);
+                    }
+
+                }
+            }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url}");
             }
 
             foreach (var value in iaa_consensus)
@@ -641,49 +698,62 @@ namespace FindStock
                 else
                     stock.SET100 = "0";
 
-            foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//td//div[@class='row']//div[@class='row']//div[@class='col-xs-3 col-md-7']"))
+            try
             {
-                string head = node.SelectSingleNode("..//div[@class='col-xs-3 col-md-7']").InnerText;
-                string body = node.SelectSingleNode("..//div[@class='col-xs-9 col-md-5']").InnerText;
-                if (head == "ตลาด")
-                    stock.Market = body;
-                else if (head == "กลุ่มอุตสาหกรรม")
-                    stock.Industry = body;
-                else if (head == "หมวดธุรกิจ")
-                    stock.Sector = body;
+                string name = doc.DocumentNode.SelectSingleNode("//div[@class='row']//h3").InnerText;
+                stock.Name = name.Substring(name.IndexOf(":") + 2, name.Length - name.IndexOf(":") - 2);
+            }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url}");
+            }
+
+            try
+            {
+                foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//td//div[@class='row']//div[@class='row']//div[@class='col-xs-3 col-md-7']"))
+                {
+                    string head = node.SelectSingleNode("..//div[@class='col-xs-3 col-md-7']").InnerText;
+                    string body = node.SelectSingleNode("..//div[@class='col-xs-9 col-md-5']").InnerText;
+                    if (head == "ตลาด")
+                        stock.Market = body;
+                    else if (head == "กลุ่มอุตสาหกรรม")
+                        stock.Industry = body;
+                    else if (head == "หมวดธุรกิจ")
+                        stock.Sector = body;
+                }
+            }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url}");
             }
 
             url = $"https://www.finnomena.com/stock/{symbol_url}";
             var Webget1 = new HtmlWeb();
             var doc1 = Webget.Load(url);
-            foreach (HtmlNode node in doc1.DocumentNode.SelectNodes("//div[@class='performance-a-year']//p"))
+
+            try
             {
-                string utf8_String = node.InnerText;
-                byte[] bytes = Encoding.UTF8.GetBytes(utf8_String);
-                utf8_String = Encoding.UTF8.GetString(bytes);
-                utf8_String = utf8_String.Replace("  ", String.Empty);
-                if (utf8_String.IndexOf("%") > -1)
-                    utf8_String = utf8_String.Substring(1, utf8_String.IndexOf("%") - 2);
-                if (utf8_String == "N/A")
-                    utf8_String = null;
-                stock.Return_rate = utf8_String;
+                foreach (HtmlNode node in doc1.DocumentNode.SelectNodes("//div[@class='performance-a-year']//p"))
+                {
+                    string utf8_String = node.InnerText;
+                    byte[] bytes = Encoding.UTF8.GetBytes(utf8_String);
+                    utf8_String = Encoding.UTF8.GetString(bytes);
+                    utf8_String = utf8_String.Replace("  ", String.Empty);
+                    if (utf8_String.IndexOf("%") > -1)
+                        utf8_String = utf8_String.Substring(1, utf8_String.IndexOf("%") - 2);
+                    if (utf8_String == "N/A")
+                        utf8_String = null;
+                    stock.Return_rate = utf8_String;
+                }
+            }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url}");
             }
 
             IAAPersent(ref stock, "iaa_consensus_summary", $"Symbol = '{stock.Symbol}'");
             GrowthStockPersent(ref stock);
-
-            /*log.LOGD($"Symbol: {stock.Symbol}");
-            log.LOGD($"Market: {stock.Market}");
-            log.LOGD($"Industry: {stock.Industry}");
-            log.LOGD($"Sector: {stock.Sector}");
-            log.LOGD($"SET50: {stock.SET50}");
-            log.LOGD($"SET100: {stock.SET100}");
-            log.LOGD($"Return_rate: {stock.Return_rate}");
-            log.LOGD($"Price: {stock.Price}");
-            log.LOGD($"IAA: {stock.IAA}");
-            log.LOGD($"Growth_stock: {stock.Growth_stock}");
-            log.LOGD($"Stock_dividend: {stock.Stock_dividend}");
-            log.LOGD($"LastUpdate: {stock.LastUpdate}");*/
+            StockDividendPersent(ref stock);
 
             // Insert or Update datebase stock
             StatementDatabase(stock, "stock", $"Symbol='{stock.Symbol}'");
@@ -692,6 +762,127 @@ namespace FindStock
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
         // | Database Function                                               |
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+        private static void StockDividendPersent(ref Stock stock)
+        {
+            string symbol_url = stock.Symbol;
+            if (stock.Symbol.IndexOf(" & ") > -1)
+                symbol_url = stock.Symbol.Replace(" & ", "+%26+");
+            else if (stock.Symbol.IndexOf("&") > -1)
+                symbol_url = stock.Symbol.Replace("&", "%26");
+
+            string sql = "";
+            string connetionString;
+            SqlConnection cnn;
+            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+
+            sql = $"SELECT Symbol,Year,Dvd_Yield FROM dbo.finance_stat_yearly WHERE Symbol = '{stock.Symbol}'";
+            SqlCommand command = new SqlCommand(sql, cnn);
+            command.Parameters.AddWithValue("@zip", "india");
+
+            List<SD> stock_div = new List<SD>();
+            StockDividend stock_dividend = new StockDividend();
+            stock_dividend.Symbol = stock.Symbol;
+            stock_dividend.LastUpdate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    SD tmp;
+                    tmp.Year = String.Format("{0}", reader["Year"]);
+                    tmp.Dvd_Yield = Convert.ToDouble(String.Format("{0}", reader["Dvd_Yield"]));
+                    stock_div.Add(tmp);
+                }
+            }
+
+            stock_div = stock_div.OrderByDescending(o => o.Year).ToList();
+            int i = 0;
+            List<SD> stock_divt_rate = new List<SD>();
+            foreach (var value in stock_div)
+            {
+
+                stock_divt_rate.Add(value);
+                if (i++ > 5)
+                    break;
+            }
+            stock_divt_rate = stock_divt_rate.OrderBy(o => o.Year).ToList();
+            int x = 0, y = 0;
+            foreach (var value in stock_divt_rate)
+            {
+                if (value.Dvd_Yield > 0)
+                    x++;
+                if (value.Dvd_Yield > 1)
+                    y++;
+            }
+
+            double unappropriated = 0, dividend_paid = 0;
+
+            // Scraping Web
+            var url = $"https://www.set.or.th/set/companyfinance.do?symbol={symbol_url}";
+            var Webget = new HtmlWeb();
+            var doc = Webget.Load(url);
+            try
+            {
+                foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//div[@class='table-responsive']//tr"))
+                {
+                    string head = node.SelectSingleNode(".//td[@style='text-align:left;']").InnerText;
+                    head = head.Replace("&nbsp;", String.Empty);
+                    if (head == "กำไร (ขาดทุน) สะสม - ยังไม่ได้จัดสรร")
+                    {
+                        string body = node.ChildNodes[5].InnerText;
+                        unappropriated = Convert.ToDouble(CutStrignMoney(body));
+                    }
+                }
+            }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url}");
+            }
+
+
+            // Scraping Web
+            url = $"https://www.set.or.th/set/companyfinance.do?type=cashflow&symbol={symbol_url}";
+
+            var Webget1 = new HtmlWeb();
+            var doc1 = Webget1.Load(url);
+            try
+            {
+                foreach (HtmlNode node in doc1.DocumentNode.SelectNodes("//div[@class='table-responsive']//tr"))
+                {
+                    string head = node.SelectSingleNode(".//td[@style='text-align:left;']").InnerText;
+                    head = head.Replace("&nbsp;", String.Empty);
+                    if (head == "เงินปันผลจ่าย")
+                    {
+                        string body = node.ChildNodes[5].InnerText;
+                        body = body.Replace("-", String.Empty);
+                        dividend_paid = Convert.ToDouble(CutStrignMoney(body));
+                    }
+                }
+            }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url}");
+            }
+
+            double Double_rate = 0, DIv_rate = 0, More_one_rate = 0;
+            if (unappropriated > (dividend_paid * 2))
+                Double_rate = 100;
+
+            if(i > 0)
+            {
+                DIv_rate = Math.Round((double)(x * 100 / (double)(i)));
+                More_one_rate = Math.Round((double)(y * 100 / (double)(i)));
+            }
+            stock.Stock_dividend = ((DIv_rate + More_one_rate + Double_rate) / 3).ToString();
+            stock_dividend.DIv_rate = DIv_rate.ToString();
+            stock_dividend.More_one_rate = More_one_rate.ToString();
+            stock_dividend.Double_rate = Double_rate.ToString();
+
+            StatementDatabase(stock_dividend, "stock_dividend", $"Symbol='{stock.Symbol}'");
+
+            cnn.Close();
+        }
         private static void GrowthStockPersent(ref Stock stock)
         {
             string sql = "";

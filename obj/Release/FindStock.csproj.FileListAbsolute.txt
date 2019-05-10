@@ -8,3 +8,4 @@ C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.csproj.
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.csproj.CopyComplete
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.exe
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.pdb
+C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.csprojAssemblyReference.cache
