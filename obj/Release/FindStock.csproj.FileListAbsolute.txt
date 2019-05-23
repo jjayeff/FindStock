@@ -9,3 +9,10 @@ C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.csproj.
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.exe
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.pdb
 C:\Users\ekkaw\source\repos\C#\FindStock\FindStock\obj\Release\FindStock.csprojAssemblyReference.cache
+D:\Code\FindStock\bin\Release\FindStock.exe.config
+D:\Code\FindStock\bin\Release\FindStock.exe
+D:\Code\FindStock\bin\Release\FindStock.pdb
+D:\Code\FindStock\obj\Release\FindStock.csproj.CoreCompileInputs.cache
+D:\Code\FindStock\obj\Release\FindStock.csproj.CopyComplete
+D:\Code\FindStock\obj\Release\FindStock.exe
+D:\Code\FindStock\obj\Release\FindStock.pdb

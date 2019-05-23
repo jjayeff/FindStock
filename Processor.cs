@@ -36,13 +36,24 @@ namespace FindStock
             public string Market { get; set; }
             public string Industry { get; set; }
             public string Sector { get; set; }
+            public string Website { get; set; }
             public string SET50 { get; set; }
             public string SET100 { get; set; }
+            public string Market_cap { get; set; }
+            public string First_trade_date { get; set; }
             public string Return_rate { get; set; }
-            public string Price { get; set; }
-            public string IAA { get; set; }
-            public string Growth_stock { get; set; }
-            public string Stock_dividend { get; set; }
+            public string Price_rate { get; set; }
+            public string IAA_rate { get; set; }
+            public string Growth_stock_rate { get; set; }
+            public string Stock_dividend_rate { get; set; }
+            public string SET50_rate { get; set; }
+            public string SET100_rate { get; set; }
+            public string PE_rate { get; set; }
+            public string PBV_rate { get; set; }
+            public string ROE_rate { get; set; }
+            public string ROA_rate { get; set; }
+            public string Market_cap_rate { get; set; }
+            public string Score { get; set; }
             public string LastUpdate { get; set; }
         }
         private class FinanceInfo
@@ -685,19 +696,26 @@ namespace FindStock
                 if (value == symbol)
                 {
                     stock.SET50 = "1";
+                    stock.SET50_rate = "100";
                     break;
                 }
                 else
+                {
                     stock.SET50 = "0";
+                    stock.SET50_rate = "0";
+                }
             foreach (var value in set100)
                 if (value == symbol)
                 {
-                    stock.SET100 = (value == symbol) ? "1" : "0";
+                    stock.SET100 = "1";
+                    stock.SET100_rate = "100";
                     break;
                 }
                 else
+                {
                     stock.SET100 = "0";
-
+                    stock.SET100_rate = "0";
+                }
             try
             {
                 string name = doc.DocumentNode.SelectSingleNode("//div[@class='row']//h3").InnerText;
@@ -720,6 +738,40 @@ namespace FindStock
                         stock.Industry = body;
                     else if (head == "หมวดธุรกิจ")
                         stock.Sector = body;
+                    else if (head == "วันที่เริ่มต้นซื้อขาย")
+                        stock.First_trade_date = ChangeDateFormat3(body);
+                }
+            }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url}");
+            }
+
+            try
+            {
+                foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//td//div[@class='row']//div[@class='col-xs-12 col-md-3']"))
+                {
+                    string head = node.SelectSingleNode("..//div[@class='col-xs-12 col-md-3']").InnerText;
+                    string body = node.SelectSingleNode("..//div[@class='col-xs-12 col-md-9']").InnerText;
+                    if (head == "เว็บไซต์")
+                        stock.Website = body;
+                }
+            }
+            catch
+            {
+                log.LOGE($"Not scraping data from {url}");
+            }
+
+            try
+            {
+                foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//td//div[@class='row']//div[@class='col-xs-12 col-md-8']"))
+                {
+                    string head = node.SelectSingleNode("..//div[@class='col-xs-12 col-md-8']//div[@class='col-xs-3 col-md-7']").InnerText;
+                    string body = node.SelectSingleNode("..//div[@class='col-xs-12 col-md-8']//div[@class='col-xs-9 col-md-5']").InnerText;
+                    head = head.Replace(" ", String.Empty);
+                    body = body.Replace(" ", String.Empty);
+                    if (head == "มูลค่าหลักทรัพย์ตามราคาตลาด(ล้านบาท)")
+                        stock.Market_cap = body != "-" ? CutStrignMoney(body) : null;
                 }
             }
             catch
@@ -754,6 +806,34 @@ namespace FindStock
             IAAPersent(ref stock, "iaa_consensus_summary", $"Symbol = '{stock.Symbol}'");
             GrowthStockPersent(ref stock);
             StockDividendPersent(ref stock);
+            FinancialStat(ref stock);
+            FinancialInfo(ref stock);
+
+            // cal score
+            double sum = 136;
+            double[] score = new double[16];
+            for (int i = 0; i < 16; i++)
+            {
+                score[i] = ((i + 1) * 100.00 / sum);
+            }
+
+            double score_result = 0;
+            var x = score_result = 0;
+            
+            score_result += stock.Return_rate == null ? 0 : Convert.ToDouble(stock.Return_rate) >= 0 ? (score[0] * 100.00 / 100.00) : 0;
+            score_result += stock.Price_rate == null ? 0 : Convert.ToDouble(stock.Price_rate) >= 0 ? (score[1] * 100.00 / 100.00) : 0;
+            score_result += stock.IAA_rate == null ? 0 : score[2] * Convert.ToDouble(stock.IAA_rate) / 100.00;
+            score_result += stock.Growth_stock_rate == null ? 0 : (score[15] + score[4] + score[14]) * Convert.ToDouble(stock.Growth_stock_rate) / 100.00;
+            score_result += stock.Stock_dividend_rate == null ? 0 : (score[13] + score[11] + score[12]) * Convert.ToDouble(stock.Stock_dividend_rate) / 100.00;
+            score_result += stock.SET50_rate == null ? 0 : score[10] * Convert.ToDouble(stock.SET50_rate) / 100.00;
+            score_result += stock.SET100_rate == null ? 0 : score[7] * Convert.ToDouble(stock.SET100_rate) / 100.00;
+            score_result += stock.PE_rate == null ? 0 : score[6] * Convert.ToDouble(stock.PE_rate) / 100.00;
+            score_result += stock.PBV_rate == null ? 0 : score[5] * Convert.ToDouble(stock.PBV_rate) / 100.00;
+            score_result += stock.ROE_rate == null ? 0 : score[8] * Convert.ToDouble(stock.ROE_rate) / 100.00;
+            score_result += stock.ROA_rate == null ? 0 : score[9] * Convert.ToDouble(stock.ROA_rate) / 100.00;
+            score_result += stock.Market_cap_rate == null ? 0 : score[3] * Convert.ToDouble(stock.Market_cap_rate) / 100.00;
+
+            stock.Score = score_result.ToString();
 
             // Insert or Update datebase stock
             StatementDatabase(stock, "stock", $"Symbol='{stock.Symbol}'");
@@ -762,6 +842,137 @@ namespace FindStock
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
         // | Database Function                                               |
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+        private static string MCavr(ref Stock stock, double mc)
+        {
+            string sql = "";
+            string connetionString;
+            SqlConnection cnn;
+            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+
+            sql = $"SELECT stock.Symbol " +
+                $",finance_stat_daily.Market_cap " +
+                $"FROM stock " +
+                $"INNER JOIN finance_stat_daily ON stock.Symbol = finance_stat_daily.Symbol " +
+                $"WHERE finance_stat_daily.LastUpdate IN (SELECT max(finance_stat_daily.LastUpdate) FROM finance_stat_daily) " +
+                $"AND Sector = '{stock.Sector}'";
+
+            SqlCommand command = new SqlCommand(sql, cnn);
+            command.Parameters.AddWithValue("@zip", "india");
+            double mc_result = 0, count = 0;
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    mc_result += Convert.ToDouble(String.Format("{0}", reader["Market_cap"]));
+                    count++;
+                }
+            }
+
+            cnn.Close();
+
+            return (mc > (mc_result / count)) ? "100" : "0";
+        }
+        private static string PEavr(ref Stock stock, double pe)
+        {
+            string sql = "";
+            string connetionString;
+            SqlConnection cnn;
+            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+
+            sql = $"SELECT stock.Symbol " +
+                $",finance_stat_daily.PE " +
+                $"FROM stock " +
+                $"INNER JOIN finance_stat_daily ON stock.Symbol = finance_stat_daily.Symbol " +
+                $"WHERE finance_stat_daily.LastUpdate IN (SELECT max(finance_stat_daily.LastUpdate) FROM finance_stat_daily) " +
+                $"AND Sector = '{stock.Sector}'";
+
+            SqlCommand command = new SqlCommand(sql, cnn);
+            command.Parameters.AddWithValue("@zip", "india");
+            double pe_result = 0, count = 0;
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    pe_result += Convert.ToDouble(String.Format("{0}", reader["PE"]));
+                    count++;
+                }
+            }
+
+            cnn.Close();
+
+            return (pe <= (pe_result / count)) ? "25" : "0";
+        }
+        private static void FinancialInfo(ref Stock stock)
+        {
+            string sql = "";
+            string connetionString;
+            SqlConnection cnn;
+            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+
+            sql = $"SELECT TOP (1) Symbol " +
+                $",ROA " +
+                $",ROE " +
+                $"FROM dbo.finance_info_yearly " +
+                $"WHERE Symbol = '{stock.Symbol}' " +
+                $"AND Date IN (SELECT max(Date) FROM dbo.finance_info_yearly WHERE Symbol = '{stock.Symbol}') ";
+
+            SqlCommand command = new SqlCommand(sql, cnn);
+            command.Parameters.AddWithValue("@zip", "india");
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    double roa = Convert.ToDouble(String.Format("{0}", reader["ROA"]) != "" ? String.Format("{0}", reader["ROA"]) : "0");
+                    double roe = Convert.ToDouble(String.Format("{0}", reader["ROE"]) != "" ? String.Format("{0}", reader["ROE"]) : "0");
+                    stock.ROA_rate = (roa >= 15) ? "100" : (roa >= 10 && roa < 15) ? "50" : "0";
+                    stock.ROE_rate = (roe >= 15) ? "100" : "0";
+                }
+            }
+
+            cnn.Close();
+        }
+        private static void FinancialStat(ref Stock stock)
+        {
+            string sql = "";
+            string connetionString;
+            SqlConnection cnn;
+            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+
+            sql = $"SELECT TOP (1) Symbol " +
+                $",PE " +
+                $",PBV " +
+                $",Market_cap " +
+                $"FROM dbo.finance_stat_daily " +
+                $"WHERE Symbol = '{stock.Symbol}' " +
+                $"AND LastUpdate IN (SELECT max(LastUpdate) FROM dbo.finance_stat_daily WHERE Symbol = '{stock.Symbol}') ";
+
+            SqlCommand command = new SqlCommand(sql, cnn);
+            command.Parameters.AddWithValue("@zip", "india");
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    double pe = Convert.ToDouble(String.Format("{0}", reader["PE"]) != "" ? String.Format("{0}", reader["PE"]) : "0");
+                    double pbv = Convert.ToDouble(String.Format("{0}", reader["PBV"]) != "" ? String.Format("{0}", reader["PBV"]) : "0");
+                    double mc = Convert.ToDouble(String.Format("{0}", reader["Market_cap"]) != "" ? String.Format("{0}", reader["Market_cap"]) : "0");
+                    stock.PE_rate = (pe <= 5) ? "100" : (pe > 5 && pe <= 10) ? "75" : (pe > 10 && pe <= 18) ? "50" : PEavr(ref stock, pe);
+                    stock.PBV_rate = (pbv <= 1) ? "100" : "0";
+                    stock.Market_cap_rate = MCavr(ref stock, mc);
+                }
+            }
+
+            cnn.Close();
+        }
         private static void StockDividendPersent(ref Stock stock)
         {
             string symbol_url = stock.Symbol;
@@ -869,12 +1080,12 @@ namespace FindStock
             if (unappropriated > (dividend_paid * 2))
                 Double_rate = 100;
 
-            if(i > 0)
+            if (i > 0)
             {
                 DIv_rate = Math.Round((double)(x * 100 / (double)(i)));
                 More_one_rate = Math.Round((double)(y * 100 / (double)(i)));
             }
-            stock.Stock_dividend = ((DIv_rate + More_one_rate + Double_rate) / 3).ToString();
+            stock.Stock_dividend_rate = (((DIv_rate / 100 * 14.00) + (More_one_rate / 100 * 12.00) + (Double_rate / 100 * 13.00)) * 100.00 / 39).ToString();
             stock_dividend.DIv_rate = DIv_rate.ToString();
             stock_dividend.More_one_rate = More_one_rate.ToString();
             stock_dividend.Double_rate = Double_rate.ToString();
@@ -950,7 +1161,7 @@ namespace FindStock
                 double Assets_rate = Math.Round((double)(x * 100 / (double)(i - 1)));
                 double Net_rate = Math.Round((double)(y * 100 / (double)(i - 1)));
                 double Price_rate = Math.Round((double)(z * 100 / (double)(i - 1)));
-                stock.Growth_stock = ((Assets_rate + Net_rate + Price_rate) / 3).ToString();
+                stock.Growth_stock_rate = (((Assets_rate / 100 * 15.00) + (Net_rate / 100 * 16.00) + (Price_rate / 100 * 5.00)) * 100.00 / 36).ToString();
                 growth_stock.Assets_rate = Assets_rate.ToString();
                 growth_stock.Net_rate = Net_rate.ToString();
                 growth_stock.Price_rate = Price_rate.ToString();
@@ -980,12 +1191,12 @@ namespace FindStock
                     {
                         double last_price = Convert.ToDouble(String.Format("{0}", reader["LastPrice"]));
                         double target_price = Convert.ToDouble(String.Format("{0}", reader["Average_TargetPrice"]));
-                        stock.Price = Math.Round((target_price - last_price) * 100 / last_price, 2).ToString();
+                        stock.Price_rate = Math.Round((target_price - last_price) * 100 / last_price, 2).ToString();
                         double buy = Convert.ToInt32(String.Format("{0}", reader["Buy"]));
                         double hold = Convert.ToInt32(String.Format("{0}", reader["Hold"]));
                         double sell = Convert.ToInt32(String.Format("{0}", reader["Sell"]));
                         if ((buy + hold + sell) > 0)
-                            stock.IAA = Math.Round((buy + (hold / 2)) * 100 / (buy + hold + sell), 2).ToString();
+                            stock.IAA_rate = Math.Round((buy + (hold / 2)) * 100 / (buy + hold + sell), 2).ToString();
                     }
                 }
             }
@@ -1037,7 +1248,7 @@ namespace FindStock
                 adapter.UpdateCommand.ExecuteNonQuery();
                 command.Dispose();
             }
-            catch (Exception ex)
+            catch
             {
                 log.LOGE($"[FundamentalSET100::UpdateDatebase]  {sql}");
             }
@@ -1054,7 +1265,7 @@ namespace FindStock
                 adapter.InsertCommand.ExecuteNonQuery();
                 command.Dispose();
             }
-            catch (Exception ex)
+            catch
             {
                 log.LOGE($"[FundamentalSET100::InsertDatebase]  {sql}");
             }
