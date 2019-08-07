@@ -1,0 +1,7 @@
+07/01/2562 09:36:05 [INFO] [Run@204] Start FindStock
+07/01/2562 09:36:07 [INFO] [Run@241] Run 0 CHOTI
+07/01/2562 09:36:12 [INFO] [IAAConsensusScraping@677] Success CHOTI
+07/01/2562 09:36:25 [INFO] [CompanyHighlights@542] Success CHOTI
+07/01/2562 09:36:37 [INFO] [StockScraping@840] Success CHOTI
+07/01/2562 09:36:37 [INFO] [Run@241] Run 1 EE
+07/01/2562 09:36:38 [INFO] [IAAConsensusScraping@677] Success EE

@@ -1,8 +1,8 @@
 ﻿using HtmlAgilityPack;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -779,12 +779,11 @@ namespace FindStock
                 log.LOGE($"Not scraping data from {url}");
             }
 
-            url = $"https://www.finnomena.com/stock/{symbol_url}";
-            var Webget1 = new HtmlWeb();
-            var doc1 = Webget.Load(url);
-
             try
             {
+                url = $"https://www.finnomena.com/stock/{symbol_url}";
+                var Webget1 = new HtmlWeb();
+                var doc1 = Webget.Load(url);
                 foreach (HtmlNode node in doc1.DocumentNode.SelectNodes("//div[@class='performance-a-year']//p"))
                 {
                     string utf8_String = node.InnerText;
@@ -846,10 +845,10 @@ namespace FindStock
         {
             string sql = "";
             string connetionString;
-            SqlConnection cnn;
-            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+
+            connetionString = $"Persist Security Info=False;server={DatabaseServer};database={Database};uid={Username};password={Password}";
+            MySqlConnection cnn = new MySqlConnection(connetionString);
+            MySqlCommand command = cnn.CreateCommand();
 
             sql = $"SELECT stock.Symbol " +
                 $",finance_stat_daily.Market_cap " +
@@ -858,10 +857,19 @@ namespace FindStock
                 $"WHERE finance_stat_daily.LastUpdate IN (SELECT max(finance_stat_daily.LastUpdate) FROM finance_stat_daily) " +
                 $"AND Sector = '{stock.Sector}'";
 
-            SqlCommand command = new SqlCommand(sql, cnn);
-            command.Parameters.AddWithValue("@zip", "india");
+            command.CommandText = sql;
+
+            try
+            {
+                cnn.Open();
+            }
+            catch (Exception erro)
+            {
+                log.LOGE("Erro" + erro);
+            }
+
             double mc_result = 0, count = 0;
-            using (SqlDataReader reader = command.ExecuteReader())
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -878,10 +886,9 @@ namespace FindStock
         {
             string sql = "";
             string connetionString;
-            SqlConnection cnn;
-            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            connetionString = $"Persist Security Info=False;server={DatabaseServer};database={Database};uid={Username};password={Password}";
+            MySqlConnection cnn = new MySqlConnection(connetionString);
+            MySqlCommand command = cnn.CreateCommand();
 
             sql = $"SELECT stock.Symbol " +
                 $",finance_stat_daily.PE " +
@@ -890,10 +897,20 @@ namespace FindStock
                 $"WHERE finance_stat_daily.LastUpdate IN (SELECT max(finance_stat_daily.LastUpdate) FROM finance_stat_daily) " +
                 $"AND Sector = '{stock.Sector}'";
 
-            SqlCommand command = new SqlCommand(sql, cnn);
-            command.Parameters.AddWithValue("@zip", "india");
+            command.CommandText = sql;
+
+            try
+            {
+                cnn.Open();
+            }
+            catch (Exception erro)
+            {
+                log.LOGE("Erro" + erro);
+            }
+
             double pe_result = 0, count = 0;
-            using (SqlDataReader reader = command.ExecuteReader())
+
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -910,22 +927,30 @@ namespace FindStock
         {
             string sql = "";
             string connetionString;
-            SqlConnection cnn;
-            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
 
-            sql = $"SELECT TOP (1) Symbol " +
+            connetionString = $"Persist Security Info=False;server={DatabaseServer};database={Database};uid={Username};password={Password}";
+            MySqlConnection cnn = new MySqlConnection(connetionString);
+            MySqlCommand command = cnn.CreateCommand();
+
+            sql = $"SELECT Symbol " +
                 $",ROA " +
                 $",ROE " +
-                $"FROM dbo.finance_info_yearly " +
+                $"FROM {Database}.finance_info_yearly " +
                 $"WHERE Symbol = '{stock.Symbol}' " +
-                $"AND Date IN (SELECT max(Date) FROM dbo.finance_info_yearly WHERE Symbol = '{stock.Symbol}') ";
+                $"AND Date IN (SELECT max(Date) FROM {Database}.finance_info_yearly WHERE Symbol = '{stock.Symbol}') LIMIT 1 ";
 
-            SqlCommand command = new SqlCommand(sql, cnn);
-            command.Parameters.AddWithValue("@zip", "india");
+            command.CommandText = sql;
 
-            using (SqlDataReader reader = command.ExecuteReader())
+            try
+            {
+                cnn.Open();
+            }
+            catch (Exception erro)
+            {
+                log.LOGE("Erro" + erro);
+            }
+
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -942,23 +967,31 @@ namespace FindStock
         {
             string sql = "";
             string connetionString;
-            SqlConnection cnn;
-            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
 
-            sql = $"SELECT TOP (1) Symbol " +
+            connetionString = $"Persist Security Info=False;server={DatabaseServer};database={Database};uid={Username};password={Password}";
+            MySqlConnection cnn = new MySqlConnection(connetionString);
+            MySqlCommand command = cnn.CreateCommand();
+
+            sql = $"SELECT Symbol " +
                 $",PE " +
                 $",PBV " +
                 $",Market_cap " +
-                $"FROM dbo.finance_stat_daily " +
+                $"FROM {Database}.finance_stat_daily " +
                 $"WHERE Symbol = '{stock.Symbol}' " +
-                $"AND LastUpdate IN (SELECT max(LastUpdate) FROM dbo.finance_stat_daily WHERE Symbol = '{stock.Symbol}') ";
+                $"AND LastUpdate IN (SELECT max(LastUpdate) FROM {Database}.finance_stat_daily WHERE Symbol = '{stock.Symbol}') LIMIT 1 ";
 
-            SqlCommand command = new SqlCommand(sql, cnn);
-            command.Parameters.AddWithValue("@zip", "india");
+            command.CommandText = sql;
 
-            using (SqlDataReader reader = command.ExecuteReader())
+            try
+            {
+                cnn.Open();
+            }
+            catch (Exception erro)
+            {
+                log.LOGE("Erro" + erro);
+            }
+
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -983,20 +1016,29 @@ namespace FindStock
 
             string sql = "";
             string connetionString;
-            SqlConnection cnn;
-            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
 
-            sql = $"SELECT Symbol,Year,Dvd_Yield FROM dbo.finance_stat_yearly WHERE Symbol = '{stock.Symbol}'";
-            SqlCommand command = new SqlCommand(sql, cnn);
-            command.Parameters.AddWithValue("@zip", "india");
+            connetionString = $"Persist Security Info=False;server={DatabaseServer};database={Database};uid={Username};password={Password}";
+            MySqlConnection cnn = new MySqlConnection(connetionString);
+            MySqlCommand command = cnn.CreateCommand();
+
+            sql = $"SELECT Symbol,Year,Dvd_Yield FROM {Database}.finance_stat_yearly WHERE Symbol = '{stock.Symbol}'";
+
+            command.CommandText = sql;
+
+            try
+            {
+                cnn.Open();
+            }
+            catch (Exception erro)
+            {
+                log.LOGE("Erro" + erro);
+            }
 
             List<SD> stock_div = new List<SD>();
             StockDividend stock_dividend = new StockDividend();
             stock_dividend.Symbol = stock.Symbol;
             stock_dividend.LastUpdate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            using (SqlDataReader reader = command.ExecuteReader())
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -1098,29 +1140,37 @@ namespace FindStock
         {
             string sql = "";
             string connetionString;
-            SqlConnection cnn;
-            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            connetionString = $"Persist Security Info=False;server={DatabaseServer};database={Database};uid={Username};password={Password}";
+            MySqlConnection cnn = new MySqlConnection(connetionString);
+            MySqlCommand command = cnn.CreateCommand();
 
-            sql = $"SELECT {Database}.dbo.finance_info_yearly.Symbol, " +
-                $"{Database}.dbo.finance_info_yearly.Year, " +
-                $"{Database}.dbo.finance_info_yearly.Assets, " +
-                $"{Database}.dbo.finance_info_yearly.NetProfit, " +
-                $"{Database}.dbo.finance_stat_yearly.Lastprice " +
-                $"FROM {Database}.dbo.finance_info_yearly " +
-                $"INNER JOIN {Database}.dbo.finance_stat_yearly " +
-                $"ON {Database}.dbo.finance_info_yearly.Symbol = {Database}.dbo.finance_stat_yearly.Symbol " +
-                $"AND {Database}.dbo.finance_info_yearly.Year = {Database}.dbo.finance_stat_yearly.Year " +
-                $"AND {Database}.dbo.finance_info_yearly.Symbol = '{stock.Symbol}' ";
-            SqlCommand command = new SqlCommand(sql, cnn);
-            command.Parameters.AddWithValue("@zip", "india");
+            sql = $"SELECT {Database}.finance_info_yearly.Symbol, " +
+                $"{Database}.finance_info_yearly.Year, " +
+                $"{Database}.finance_info_yearly.Assets, " +
+                $"{Database}.finance_info_yearly.NetProfit, " +
+                $"{Database}.finance_stat_yearly.Lastprice " +
+                $"FROM {Database}.finance_info_yearly " +
+                $"INNER JOIN {Database}.finance_stat_yearly " +
+                $"ON {Database}.finance_info_yearly.Symbol = {Database}.finance_stat_yearly.Symbol " +
+                $"AND {Database}.finance_info_yearly.Year = {Database}.finance_stat_yearly.Year " +
+                $"AND {Database}.finance_info_yearly.Symbol = '{stock.Symbol}' ";
+
+            command.CommandText = sql;
+
+            try
+            {
+                cnn.Open();
+            }
+            catch (Exception erro)
+            {
+                log.LOGE("Erro" + erro);
+            }
 
             List<GS> netprofit = new List<GS>();
             GrowthStock growth_stock = new GrowthStock();
             growth_stock.Symbol = stock.Symbol;
             growth_stock.LastUpdate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            using (SqlDataReader reader = command.ExecuteReader())
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -1175,15 +1225,24 @@ namespace FindStock
         {
             string sql = "";
             string connetionString;
-            SqlConnection cnn;
-            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            connetionString = $"Persist Security Info=False;server={DatabaseServer};database={Database};uid={Username};password={Password}";
+            MySqlConnection cnn = new MySqlConnection(connetionString);
+            MySqlCommand command = cnn.CreateCommand();
 
-            sql = $"Select * from dbo.{db} where {where}";
-            SqlCommand command = new SqlCommand(sql, cnn);
-            command.Parameters.AddWithValue("@zip", "india");
-            using (SqlDataReader reader = command.ExecuteReader())
+            sql = $"Select * from {Database}.{db} where {where}";
+
+            command.CommandText = sql;
+
+            try
+            {
+                cnn.Open();
+            }
+            catch (Exception erro)
+            {
+                log.LOGE("Erro" + erro);
+            }
+
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
                 if (reader.Read())
                 {
@@ -1207,16 +1266,25 @@ namespace FindStock
         {
             string sql = "";
             string connetionString;
-            SqlConnection cnn;
-            connetionString = $@"Data Source={DatabaseServer};Initial Catalog={Database};User ID={Username};Password={Password}";
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            connetionString = $"Persist Security Info=False;server={DatabaseServer};database={Database};uid={Username};password={Password}";
+            MySqlConnection cnn = new MySqlConnection(connetionString);
+            MySqlCommand command = cnn.CreateCommand();
 
-            sql = $"Select * from dbo.{db} where {where}";
-            SqlCommand command = new SqlCommand(sql, cnn);
-            command.Parameters.AddWithValue("@zip", "india");
+            sql = $"Select * from {Database}.{db} where {where}";
+
+            command.CommandText = sql;
+
+            try
+            {
+                cnn.Open();
+            }
+            catch (Exception erro)
+            {
+                log.LOGE("Erro" + erro);
+            }
+
             bool event_case = true;
-            using (SqlDataReader reader = command.ExecuteReader())
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
                 if (reader.Read())
                 {
@@ -1236,15 +1304,15 @@ namespace FindStock
 
             cnn.Close();
         }
-        private static void UpdateDatebase(string sql, SqlConnection cnn)
+        private static void UpdateDatebase(string sql, MySqlConnection cnn)
         {
-            SqlCommand command;
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            MySqlCommand command;
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             try
             {
-                command = new SqlCommand(sql, cnn);
-                adapter.UpdateCommand = new SqlCommand(sql, cnn);
+                command = new MySqlCommand(sql, cnn);
+                adapter.UpdateCommand = new MySqlCommand(sql, cnn);
                 adapter.UpdateCommand.ExecuteNonQuery();
                 command.Dispose();
             }
@@ -1253,15 +1321,15 @@ namespace FindStock
                 log.LOGE($"[FundamentalSET100::UpdateDatebase]  {sql}");
             }
         }
-        private static void InsertDatebase(string sql, SqlConnection cnn)
+        private static void InsertDatebase(string sql, MySqlConnection cnn)
         {
-            SqlCommand command;
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            MySqlCommand command;
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             try
             {
-                command = new SqlCommand(sql, cnn);
-                adapter.InsertCommand = new SqlCommand(sql, cnn);
+                command = new MySqlCommand(sql, cnn);
+                adapter.InsertCommand = new MySqlCommand(sql, cnn);
                 adapter.InsertCommand.ExecuteNonQuery();
                 command.Dispose();
             }
@@ -1272,7 +1340,7 @@ namespace FindStock
         }
         private static string GetInsertSQL(object item, string db)
         {
-            string sql = $"INSERT INTO dbo.{db} (:columns:) VALUES (:values:);";
+            string sql = $"INSERT INTO {Database}.{db} (:columns:) VALUES (:values:);";
 
             string[] columns = new string[item.GetType().GetProperties().Count()];
             string[] values = new string[item.GetType().GetProperties().Count()];
@@ -1290,7 +1358,7 @@ namespace FindStock
         }
         private static string GetUpdateSQL(object item, string db, string whare)
         {
-            string sql = $"UPDATE dbo.{db} SET :update: WHERE {whare} ;";
+            string sql = $"UPDATE {Database}.{db} SET :update: WHERE {whare} ;";
 
             string[] columns = new string[item.GetType().GetProperties().Count()];
             string[] values = new string[item.GetType().GetProperties().Count()];
@@ -1309,7 +1377,7 @@ namespace FindStock
         private static string FillColumnsAndValuesIntoInsertQuery(string query, string[] columns, string[] values)
         {
             //joining the string arrays with a comma character
-            string columnnames = string.Join(",", columns);
+            string columnnames = ("`" + string.Join("`,`", (columns)) + "`");
             //adding values with single quotation marks around them to handle errors related to string values
             string valuenames = ("'" + string.Join("','", values) + "'").Replace("''", "null");
             //replacing the markers with the desired column names and values
@@ -1320,15 +1388,15 @@ namespace FindStock
             string result = "";
             for (int i = 0; i < columns.Length; i++)
                 if (values[i] != null)
-                    result += $"{columns[i]} = '{values[i]}'" + (i + 1 != columns.Length ? ", " : " ");
+                    result += $"`{columns[i]}` = '{values[i]}'" + (i + 1 != columns.Length ? ", " : " ");
                 else
-                    result += $"{columns[i]} = null" + (i + 1 != columns.Length ? ", " : " ");
+                    result += $"`{columns[i]}` = null" + (i + 1 != columns.Length ? ", " : " ");
             //replacing the markers with the desired column names and values
             return query.Replace(":update:", result);
         }
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
         // | Other    Function                                               |
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         private static string CutStrignMoney(string money)
         {
             if (money == "null")

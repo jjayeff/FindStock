@@ -1,0 +1,1124 @@
+06/30/2562 16:44:20 [INFO] [Run@204] Start FindStock
+06/30/2562 16:44:22 [INFO] [Run@241] Run 0 CHOTI
+06/30/2562 16:44:26 [INFO] [IAAConsensusScraping@677] Success CHOTI
+06/30/2562 16:44:40 [INFO] [CompanyHighlights@542] Success CHOTI
+06/30/2562 16:44:52 [INFO] [StockScraping@840] Success CHOTI
+06/30/2562 16:44:52 [INFO] [Run@241] Run 1 EE
+06/30/2562 16:44:53 [INFO] [IAAConsensusScraping@677] Success EE
+06/30/2562 16:45:06 [INFO] [CompanyHighlights@542] Success EE
+06/30/2562 16:45:16 [INFO] [StockScraping@840] Success EE
+06/30/2562 16:45:16 [INFO] [Run@241] Run 2 GFPT
+06/30/2562 16:45:25 [INFO] [IAAConsensusScraping@677] Success GFPT
+06/30/2562 16:45:38 [INFO] [CompanyHighlights@542] Success GFPT
+06/30/2562 16:45:48 [INFO] [StockScraping@840] Success GFPT
+06/30/2562 16:45:48 [INFO] [Run@241] Run 3 LEE
+06/30/2562 16:45:50 [INFO] [IAAConsensusScraping@677] Success LEE
+06/30/2562 16:46:03 [INFO] [CompanyHighlights@542] Success LEE
+06/30/2562 16:46:13 [INFO] [StockScraping@840] Success LEE
+06/30/2562 16:46:13 [INFO] [Run@241] Run 4 NER
+06/30/2562 16:46:18 [INFO] [IAAConsensusScraping@677] Success NER
+06/30/2562 16:46:23 [INFO] [CompanyHighlights@542] Success NER
+06/30/2562 16:46:32 [INFO] [StockScraping@840] Success NER
+06/30/2562 16:46:32 [INFO] [Run@241] Run 5 PPPM
+06/30/2562 16:46:33 [INFO] [IAAConsensusScraping@677] Success PPPM
+06/30/2562 16:46:47 [INFO] [CompanyHighlights@542] Success PPPM
+06/30/2562 16:46:56 [INFO] [StockScraping@840] Success PPPM
+06/30/2562 16:46:56 [INFO] [Run@241] Run 6 STA
+06/30/2562 16:47:02 [INFO] [IAAConsensusScraping@677] Success STA
+06/30/2562 16:47:15 [INFO] [CompanyHighlights@542] Success STA
+06/30/2562 16:47:25 [INFO] [StockScraping@840] Success STA
+06/30/2562 16:47:25 [INFO] [Run@241] Run 7 TRUBB
+06/30/2562 16:47:26 [INFO] [IAAConsensusScraping@677] Success TRUBB
+06/30/2562 16:47:39 [INFO] [CompanyHighlights@542] Success TRUBB
+06/30/2562 16:47:49 [INFO] [StockScraping@840] Success TRUBB
+06/30/2562 16:47:49 [INFO] [Run@241] Run 8 TWPC
+06/30/2562 16:47:50 [INFO] [IAAConsensusScraping@677] Success TWPC
+06/30/2562 16:48:03 [INFO] [CompanyHighlights@542] Success TWPC
+06/30/2562 16:48:13 [INFO] [StockScraping@840] Success TWPC
+06/30/2562 16:48:13 [INFO] [Run@241] Run 9 UPOIC
+06/30/2562 16:48:15 [INFO] [IAAConsensusScraping@677] Success UPOIC
+06/30/2562 16:48:28 [INFO] [CompanyHighlights@542] Success UPOIC
+06/30/2562 16:48:37 [INFO] [StockScraping@840] Success UPOIC
+06/30/2562 16:48:37 [INFO] [Run@241] Run 10 UVAN
+06/30/2562 16:48:38 [INFO] [IAAConsensusScraping@677] Success UVAN
+06/30/2562 16:48:52 [INFO] [CompanyHighlights@542] Success UVAN
+06/30/2562 16:49:02 [INFO] [StockScraping@840] Success UVAN
+06/30/2562 16:49:02 [INFO] [Run@241] Run 11 VPO
+06/30/2562 16:49:03 [INFO] [IAAConsensusScraping@677] Success VPO
+06/30/2562 16:49:16 [INFO] [CompanyHighlights@542] Success VPO
+06/30/2562 16:49:25 [INFO] [StockScraping@840] Success VPO
+06/30/2562 16:49:25 [INFO] [Run@241] Run 12 APURE
+06/30/2562 16:49:27 [INFO] [IAAConsensusScraping@677] Success APURE
+06/30/2562 16:49:40 [INFO] [CompanyHighlights@542] Success APURE
+06/30/2562 16:49:49 [INFO] [StockScraping@840] Success APURE
+06/30/2562 16:49:49 [INFO] [Run@241] Run 13 ASIAN
+06/30/2562 16:49:51 [INFO] [IAAConsensusScraping@677] Success ASIAN
+06/30/2562 16:50:05 [INFO] [CompanyHighlights@542] Success ASIAN
+06/30/2562 16:50:14 [INFO] [StockScraping@840] Success ASIAN
+06/30/2562 16:50:14 [INFO] [Run@241] Run 14 BR
+06/30/2562 16:50:19 [INFO] [IAAConsensusScraping@677] Success BR
+06/30/2562 16:50:33 [INFO] [CompanyHighlights@542] Success BR
+06/30/2562 16:50:43 [INFO] [StockScraping@840] Success BR
+06/30/2562 16:50:43 [INFO] [Run@241] Run 15 BRR
+06/30/2562 16:50:44 [INFO] [IAAConsensusScraping@677] Success BRR
+06/30/2562 16:50:57 [INFO] [CompanyHighlights@542] Success BRR
+06/30/2562 16:51:07 [INFO] [StockScraping@840] Success BRR
+06/30/2562 16:51:07 [INFO] [Run@241] Run 16 CBG
+06/30/2562 16:51:16 [INFO] [IAAConsensusScraping@677] Success CBG
+06/30/2562 16:51:29 [INFO] [CompanyHighlights@542] Success CBG
+06/30/2562 16:51:39 [INFO] [StockScraping@840] Success CBG
+06/30/2562 16:51:39 [INFO] [Run@241] Run 17 CFRESH
+06/30/2562 16:51:41 [INFO] [IAAConsensusScraping@677] Success CFRESH
+06/30/2562 16:51:54 [INFO] [CompanyHighlights@542] Success CFRESH
+06/30/2562 16:52:04 [INFO] [StockScraping@840] Success CFRESH
+06/30/2562 16:52:04 [INFO] [Run@241] Run 18 CM
+06/30/2562 16:52:05 [INFO] [IAAConsensusScraping@677] Success CM
+06/30/2562 16:52:19 [INFO] [CompanyHighlights@542] Success CM
+06/30/2562 16:52:29 [INFO] [StockScraping@840] Success CM
+06/30/2562 16:52:29 [INFO] [Run@241] Run 19 CPF
+06/30/2562 16:52:39 [INFO] [IAAConsensusScraping@677] Success CPF
+06/30/2562 16:52:53 [INFO] [CompanyHighlights@542] Success CPF
+06/30/2562 16:53:02 [INFO] [StockScraping@840] Success CPF
+06/30/2562 16:53:02 [INFO] [Run@241] Run 20 CPI
+06/30/2562 16:53:03 [INFO] [IAAConsensusScraping@677] Success CPI
+06/30/2562 16:53:17 [INFO] [CompanyHighlights@542] Success CPI
+06/30/2562 16:53:26 [INFO] [StockScraping@840] Success CPI
+06/30/2562 16:53:26 [INFO] [Run@241] Run 21 F&D
+06/30/2562 16:53:27 [INFO] [IAAConsensusScraping@677] Success F&D
+06/30/2562 16:53:40 [INFO] [CompanyHighlights@542] Success F&D
+06/30/2562 16:53:50 [INFO] [StockScraping@840] Success F&D
+06/30/2562 16:53:50 [INFO] [Run@241] Run 22 HTC
+06/30/2562 16:53:52 [INFO] [IAAConsensusScraping@677] Success HTC
+06/30/2562 16:54:05 [INFO] [CompanyHighlights@542] Success HTC
+06/30/2562 16:54:14 [INFO] [StockScraping@840] Success HTC
+06/30/2562 16:54:14 [INFO] [Run@241] Run 23 ICHI
+06/30/2562 16:54:17 [INFO] [IAAConsensusScraping@677] Success ICHI
+06/30/2562 16:54:30 [INFO] [CompanyHighlights@542] Success ICHI
+06/30/2562 16:54:40 [INFO] [StockScraping@840] Success ICHI
+06/30/2562 16:54:40 [INFO] [Run@241] Run 24 KBS
+06/30/2562 16:54:41 [INFO] [IAAConsensusScraping@677] Success KBS
+06/30/2562 16:54:54 [INFO] [CompanyHighlights@542] Success KBS
+06/30/2562 16:55:04 [INFO] [StockScraping@840] Success KBS
+06/30/2562 16:55:04 [INFO] [Run@241] Run 25 KSL
+06/30/2562 16:55:09 [INFO] [IAAConsensusScraping@677] Success KSL
+06/30/2562 16:55:22 [INFO] [CompanyHighlights@542] Success KSL
+06/30/2562 16:55:32 [INFO] [StockScraping@840] Success KSL
+06/30/2562 16:55:32 [INFO] [Run@241] Run 26 KTIS
+06/30/2562 16:55:34 [INFO] [IAAConsensusScraping@677] Success KTIS
+06/30/2562 16:55:47 [INFO] [CompanyHighlights@542] Success KTIS
+06/30/2562 16:55:57 [INFO] [StockScraping@840] Success KTIS
+06/30/2562 16:55:57 [INFO] [Run@241] Run 27 LST
+06/30/2562 16:55:59 [INFO] [IAAConsensusScraping@677] Success LST
+06/30/2562 16:56:12 [INFO] [CompanyHighlights@542] Success LST
+06/30/2562 16:56:21 [INFO] [StockScraping@840] Success LST
+06/30/2562 16:56:21 [INFO] [Run@241] Run 28 M
+06/30/2562 16:56:25 [INFO] [IAAConsensusScraping@677] Success M
+06/30/2562 16:56:38 [INFO] [CompanyHighlights@542] Success M
+06/30/2562 16:56:48 [INFO] [StockScraping@840] Success M
+06/30/2562 16:56:48 [INFO] [Run@241] Run 29 MALEE
+06/30/2562 16:56:50 [INFO] [IAAConsensusScraping@677] Success MALEE
+06/30/2562 16:57:03 [INFO] [CompanyHighlights@542] Success MALEE
+06/30/2562 16:57:12 [INFO] [StockScraping@840] Success MALEE
+06/30/2562 16:57:12 [INFO] [Run@241] Run 30 MINT
+06/30/2562 16:57:26 [INFO] [IAAConsensusScraping@677] Success MINT
+06/30/2562 16:57:39 [INFO] [CompanyHighlights@542] Success MINT
+06/30/2562 16:57:49 [INFO] [StockScraping@840] Success MINT
+06/30/2562 16:57:49 [INFO] [Run@241] Run 31 OISHI
+06/30/2562 16:57:50 [INFO] [IAAConsensusScraping@677] Success OISHI
+06/30/2562 16:58:04 [INFO] [CompanyHighlights@542] Success OISHI
+06/30/2562 16:58:13 [INFO] [StockScraping@840] Success OISHI
+06/30/2562 16:58:13 [INFO] [Run@241] Run 32 OSP
+06/30/2562 16:58:23 [INFO] [IAAConsensusScraping@677] Success OSP
+06/30/2562 16:58:28 [INFO] [CompanyHighlights@542] Success OSP
+06/30/2562 16:58:38 [INFO] [StockScraping@840] Success OSP
+06/30/2562 16:58:38 [INFO] [Run@241] Run 33 PB
+06/30/2562 16:58:40 [INFO] [IAAConsensusScraping@677] Success PB
+06/30/2562 16:58:53 [INFO] [CompanyHighlights@542] Success PB
+06/30/2562 16:59:03 [INFO] [StockScraping@840] Success PB
+06/30/2562 16:59:03 [INFO] [Run@241] Run 34 PM
+06/30/2562 16:59:04 [INFO] [IAAConsensusScraping@677] Success PM
+06/30/2562 16:59:18 [INFO] [CompanyHighlights@542] Success PM
+06/30/2562 16:59:27 [INFO] [StockScraping@840] Success PM
+06/30/2562 16:59:27 [INFO] [Run@241] Run 35 PRG
+06/30/2562 16:59:28 [INFO] [IAAConsensusScraping@677] Success PRG
+06/30/2562 16:59:41 [INFO] [CompanyHighlights@542] Success PRG
+06/30/2562 16:59:51 [INFO] [StockScraping@840] Success PRG
+06/30/2562 16:59:51 [INFO] [Run@241] Run 36 SAPPE
+06/30/2562 16:59:58 [INFO] [IAAConsensusScraping@677] Success SAPPE
+06/30/2562 17:00:11 [INFO] [CompanyHighlights@542] Success SAPPE
+06/30/2562 17:00:21 [INFO] [StockScraping@840] Success SAPPE
+06/30/2562 17:00:21 [INFO] [Run@241] Run 37 SAUCE
+06/30/2562 17:00:23 [INFO] [IAAConsensusScraping@677] Success SAUCE
+06/30/2562 17:00:36 [INFO] [CompanyHighlights@542] Success SAUCE
+06/30/2562 17:00:46 [INFO] [StockScraping@840] Success SAUCE
+06/30/2562 17:00:46 [INFO] [Run@241] Run 38 SFP
+06/30/2562 17:00:47 [INFO] [IAAConsensusScraping@677] Success SFP
+06/30/2562 17:01:01 [INFO] [CompanyHighlights@542] Success SFP
+06/30/2562 17:01:10 [INFO] [StockScraping@840] Success SFP
+06/30/2562 17:01:10 [INFO] [Run@241] Run 39 SNP
+06/30/2562 17:01:11 [INFO] [IAAConsensusScraping@677] Success SNP
+06/30/2562 17:01:25 [INFO] [CompanyHighlights@542] Success SNP
+06/30/2562 17:01:35 [INFO] [StockScraping@840] Success SNP
+06/30/2562 17:01:35 [INFO] [Run@241] Run 40 SORKON
+06/30/2562 17:01:36 [INFO] [IAAConsensusScraping@677] Success SORKON
+06/30/2562 17:01:49 [INFO] [CompanyHighlights@542] Success SORKON
+06/30/2562 17:01:59 [INFO] [StockScraping@840] Success SORKON
+06/30/2562 17:01:59 [INFO] [Run@241] Run 41 SSC
+06/30/2562 17:02:00 [INFO] [IAAConsensusScraping@677] Success SSC
+06/30/2562 17:02:13 [INFO] [CompanyHighlights@542] Success SSC
+06/30/2562 17:02:22 [INFO] [StockScraping@840] Success SSC
+06/30/2562 17:02:22 [INFO] [Run@241] Run 42 SSF
+06/30/2562 17:02:24 [INFO] [IAAConsensusScraping@677] Success SSF
+06/30/2562 17:02:37 [INFO] [CompanyHighlights@542] Success SSF
+06/30/2562 17:02:46 [INFO] [StockScraping@840] Success SSF
+06/30/2562 17:02:46 [INFO] [Run@241] Run 43 SST
+06/30/2562 17:02:48 [INFO] [IAAConsensusScraping@677] Success SST
+06/30/2562 17:03:01 [INFO] [CompanyHighlights@542] Success SST
+06/30/2562 17:03:11 [INFO] [StockScraping@840] Success SST
+06/30/2562 17:03:11 [INFO] [Run@241] Run 44 TC
+06/30/2562 17:03:12 [INFO] [IAAConsensusScraping@677] Success TC
+06/30/2562 17:03:26 [INFO] [CompanyHighlights@542] Success TC
+06/30/2562 17:03:35 [INFO] [StockScraping@840] Success TC
+06/30/2562 17:03:35 [INFO] [Run@241] Run 45 TFG
+06/30/2562 17:03:42 [INFO] [IAAConsensusScraping@677] Success TFG
+06/30/2562 17:03:55 [INFO] [CompanyHighlights@542] Success TFG
+06/30/2562 17:04:05 [INFO] [StockScraping@840] Success TFG
+06/30/2562 17:04:05 [INFO] [Run@241] Run 46 TFMAMA
+06/30/2562 17:04:06 [INFO] [IAAConsensusScraping@677] Success TFMAMA
+06/30/2562 17:04:14 [INFO] [CompanyHighlights@542] Success TFMAMA
+06/30/2562 17:04:23 [INFO] [StockScraping@840] Success TFMAMA
+06/30/2562 17:04:23 [INFO] [Run@241] Run 47 TIPCO
+06/30/2562 17:04:25 [INFO] [IAAConsensusScraping@677] Success TIPCO
+06/30/2562 17:04:38 [INFO] [CompanyHighlights@542] Success TIPCO
+06/30/2562 17:04:48 [INFO] [StockScraping@840] Success TIPCO
+06/30/2562 17:04:49 [INFO] [Run@241] Run 48 TKN
+06/30/2562 17:04:53 [INFO] [IAAConsensusScraping@677] Success TKN
+06/30/2562 17:05:07 [INFO] [CompanyHighlights@542] Success TKN
+06/30/2562 17:05:16 [INFO] [StockScraping@840] Success TKN
+06/30/2562 17:05:16 [INFO] [Run@241] Run 49 TU
+06/30/2562 17:05:24 [INFO] [IAAConsensusScraping@677] Success TU
+06/30/2562 17:05:38 [INFO] [CompanyHighlights@542] Success TU
+06/30/2562 17:05:48 [INFO] [StockScraping@840] Success TU
+06/30/2562 17:05:48 [INFO] [Run@241] Run 50 TVO
+06/30/2562 17:05:57 [INFO] [IAAConsensusScraping@677] Success TVO
+06/30/2562 17:06:10 [INFO] [CompanyHighlights@542] Success TVO
+06/30/2562 17:06:19 [INFO] [StockScraping@840] Success TVO
+06/30/2562 17:06:19 [INFO] [Run@241] Run 51 ZEN
+06/30/2562 17:06:24 [INFO] [IAAConsensusScraping@677] Success ZEN
+06/30/2562 17:06:26 [INFO] [CompanyHighlights@542] Success ZEN
+06/30/2562 17:06:36 [INFO] [StockScraping@840] Success ZEN
+06/30/2562 17:06:36 [INFO] [Run@241] Run 52 AFC
+06/30/2562 17:06:38 [INFO] [IAAConsensusScraping@677] Success AFC
+06/30/2562 17:06:51 [INFO] [CompanyHighlights@542] Success AFC
+06/30/2562 17:07:00 [INFO] [StockScraping@840] Success AFC
+06/30/2562 17:07:00 [INFO] [Run@241] Run 53 B52
+06/30/2562 17:07:02 [INFO] [IAAConsensusScraping@677] Success B52
+06/30/2562 17:07:15 [INFO] [CompanyHighlights@542] Success B52
+06/30/2562 17:07:15 [ERROR] [StockScraping@803] Not scraping data from https://www.finnomena.com/stock/B52
+06/30/2562 17:07:24 [INFO] [StockScraping@840] Success B52
+06/30/2562 17:07:24 [INFO] [Run@241] Run 54 BTNC
+06/30/2562 17:07:25 [INFO] [IAAConsensusScraping@677] Success BTNC
+06/30/2562 17:07:39 [INFO] [CompanyHighlights@542] Success BTNC
+06/30/2562 17:07:49 [INFO] [StockScraping@840] Success BTNC
+06/30/2562 17:07:49 [INFO] [Run@241] Run 55 CPH
+06/30/2562 17:07:50 [INFO] [IAAConsensusScraping@677] Success CPH
+06/30/2562 17:08:04 [INFO] [CompanyHighlights@542] Success CPH
+06/30/2562 17:08:13 [INFO] [StockScraping@840] Success CPH
+06/30/2562 17:08:13 [INFO] [Run@241] Run 56 CPL
+06/30/2562 17:08:14 [INFO] [IAAConsensusScraping@677] Success CPL
+06/30/2562 17:08:28 [INFO] [CompanyHighlights@542] Success CPL
+06/30/2562 17:08:37 [INFO] [StockScraping@840] Success CPL
+06/30/2562 17:08:37 [INFO] [Run@241] Run 57 ICC
+06/30/2562 17:08:38 [INFO] [IAAConsensusScraping@677] Success ICC
+06/30/2562 17:08:51 [INFO] [CompanyHighlights@542] Success ICC
+06/30/2562 17:09:01 [INFO] [StockScraping@840] Success ICC
+06/30/2562 17:09:01 [INFO] [Run@241] Run 58 LTX
+06/30/2562 17:09:02 [INFO] [IAAConsensusScraping@677] Success LTX
+06/30/2562 17:09:15 [INFO] [CompanyHighlights@542] Success LTX
+06/30/2562 17:09:25 [INFO] [StockScraping@840] Success LTX
+06/30/2562 17:09:25 [INFO] [Run@241] Run 59 NC
+06/30/2562 17:09:26 [INFO] [IAAConsensusScraping@677] Success NC
+06/30/2562 17:09:39 [INFO] [CompanyHighlights@542] Success NC
+06/30/2562 17:09:48 [INFO] [StockScraping@840] Success NC
+06/30/2562 17:09:48 [INFO] [Run@241] Run 60 PAF
+06/30/2562 17:09:50 [INFO] [IAAConsensusScraping@677] Success PAF
+06/30/2562 17:10:03 [INFO] [CompanyHighlights@542] Success PAF
+06/30/2562 17:10:12 [INFO] [StockScraping@840] Success PAF
+06/30/2562 17:10:12 [INFO] [Run@241] Run 61 PDJ
+06/30/2562 17:10:14 [INFO] [IAAConsensusScraping@677] Success PDJ
+06/30/2562 17:10:27 [INFO] [CompanyHighlights@542] Success PDJ
+06/30/2562 17:10:36 [INFO] [StockScraping@840] Success PDJ
+06/30/2562 17:10:36 [INFO] [Run@241] Run 62 PG
+06/30/2562 17:10:38 [INFO] [IAAConsensusScraping@677] Success PG
+06/30/2562 17:10:51 [INFO] [CompanyHighlights@542] Success PG
+06/30/2562 17:11:00 [INFO] [StockScraping@840] Success PG
+06/30/2562 17:11:00 [INFO] [Run@241] Run 63 SABINA
+06/30/2562 17:11:03 [INFO] [IAAConsensusScraping@677] Success SABINA
+06/30/2562 17:11:16 [INFO] [CompanyHighlights@542] Success SABINA
+06/30/2562 17:11:26 [INFO] [StockScraping@840] Success SABINA
+06/30/2562 17:11:26 [INFO] [Run@241] Run 64 SAWANG
+06/30/2562 17:11:27 [INFO] [IAAConsensusScraping@677] Success SAWANG
+06/30/2562 17:11:41 [INFO] [CompanyHighlights@542] Success SAWANG
+06/30/2562 17:11:50 [INFO] [StockScraping@840] Success SAWANG
+06/30/2562 17:11:50 [INFO] [Run@241] Run 65 SUC
+06/30/2562 17:11:51 [INFO] [IAAConsensusScraping@677] Success SUC
+06/30/2562 17:12:05 [INFO] [CompanyHighlights@542] Success SUC
+06/30/2562 17:12:14 [INFO] [StockScraping@840] Success SUC
+06/30/2562 17:12:14 [INFO] [Run@241] Run 66 TNL
+06/30/2562 17:12:15 [INFO] [IAAConsensusScraping@677] Success TNL
+06/30/2562 17:12:29 [INFO] [CompanyHighlights@542] Success TNL
+06/30/2562 17:12:38 [INFO] [StockScraping@840] Success TNL
+06/30/2562 17:12:38 [INFO] [Run@241] Run 67 TPCORP
+06/30/2562 17:12:39 [INFO] [IAAConsensusScraping@677] Success TPCORP
+06/30/2562 17:12:52 [INFO] [CompanyHighlights@542] Success TPCORP
+06/30/2562 17:13:02 [INFO] [StockScraping@840] Success TPCORP
+06/30/2562 17:13:02 [INFO] [Run@241] Run 68 TR
+06/30/2562 17:13:03 [INFO] [IAAConsensusScraping@677] Success TR
+06/30/2562 17:13:16 [INFO] [CompanyHighlights@542] Success TR
+06/30/2562 17:13:25 [INFO] [StockScraping@840] Success TR
+06/30/2562 17:13:25 [INFO] [Run@241] Run 69 TTI
+06/30/2562 17:13:27 [INFO] [IAAConsensusScraping@677] Success TTI
+06/30/2562 17:13:40 [INFO] [CompanyHighlights@542] Success TTI
+06/30/2562 17:13:49 [INFO] [StockScraping@840] Success TTI
+06/30/2562 17:13:49 [INFO] [Run@241] Run 70 TTTM
+06/30/2562 17:13:51 [INFO] [IAAConsensusScraping@677] Success TTTM
+06/30/2562 17:14:04 [INFO] [CompanyHighlights@542] Success TTTM
+06/30/2562 17:14:14 [INFO] [StockScraping@840] Success TTTM
+06/30/2562 17:14:14 [INFO] [Run@241] Run 71 UPF
+06/30/2562 17:14:15 [INFO] [IAAConsensusScraping@677] Success UPF
+06/30/2562 17:14:29 [INFO] [CompanyHighlights@542] Success UPF
+06/30/2562 17:14:39 [INFO] [StockScraping@840] Success UPF
+06/30/2562 17:14:39 [INFO] [Run@241] Run 72 UT
+06/30/2562 17:14:40 [INFO] [IAAConsensusScraping@677] Success UT
+06/30/2562 17:14:53 [INFO] [CompanyHighlights@542] Success UT
+06/30/2562 17:15:02 [INFO] [StockScraping@840] Success UT
+06/30/2562 17:15:02 [INFO] [Run@241] Run 73 WACOAL
+06/30/2562 17:15:04 [INFO] [IAAConsensusScraping@677] Success WACOAL
+06/30/2562 17:15:17 [INFO] [CompanyHighlights@542] Success WACOAL
+06/30/2562 17:15:26 [INFO] [StockScraping@840] Success WACOAL
+06/30/2562 17:15:26 [INFO] [Run@241] Run 74 ACC
+06/30/2562 17:15:28 [INFO] [IAAConsensusScraping@677] Success ACC
+06/30/2562 17:15:41 [INFO] [CompanyHighlights@542] Success ACC
+06/30/2562 17:15:50 [INFO] [StockScraping@840] Success ACC
+06/30/2562 17:15:50 [INFO] [Run@241] Run 75 AJA
+06/30/2562 17:15:52 [INFO] [IAAConsensusScraping@677] Success AJA
+06/30/2562 17:16:05 [INFO] [CompanyHighlights@542] Success AJA
+06/30/2562 17:16:14 [INFO] [StockScraping@840] Success AJA
+06/30/2562 17:16:14 [INFO] [Run@241] Run 76 DTCI
+06/30/2562 17:16:16 [INFO] [IAAConsensusScraping@677] Success DTCI
+06/30/2562 17:16:29 [INFO] [CompanyHighlights@542] Success DTCI
+06/30/2562 17:16:39 [INFO] [StockScraping@840] Success DTCI
+06/30/2562 17:16:39 [INFO] [Run@241] Run 77 FANCY
+06/30/2562 17:16:40 [INFO] [IAAConsensusScraping@677] Success FANCY
+06/30/2562 17:16:54 [INFO] [CompanyHighlights@542] Success FANCY
+06/30/2562 17:17:03 [INFO] [StockScraping@840] Success FANCY
+06/30/2562 17:17:03 [INFO] [Run@241] Run 78 KYE
+06/30/2562 17:17:04 [INFO] [IAAConsensusScraping@677] Success KYE
+06/30/2562 17:17:18 [INFO] [CompanyHighlights@542] Success KYE
+06/30/2562 17:17:28 [INFO] [StockScraping@840] Success KYE
+06/30/2562 17:17:28 [INFO] [Run@241] Run 79 L&E
+06/30/2562 17:17:29 [INFO] [IAAConsensusScraping@677] Success L&E
+06/30/2562 17:17:42 [INFO] [CompanyHighlights@542] Success L&E
+06/30/2562 17:17:52 [INFO] [StockScraping@840] Success L&E
+06/30/2562 17:17:52 [INFO] [Run@241] Run 80 MODERN
+06/30/2562 17:17:56 [INFO] [IAAConsensusScraping@677] Success MODERN
+06/30/2562 17:18:10 [INFO] [CompanyHighlights@542] Success MODERN
+06/30/2562 17:18:19 [INFO] [StockScraping@840] Success MODERN
+06/30/2562 17:18:19 [INFO] [Run@241] Run 81 OGC
+06/30/2562 17:18:21 [INFO] [IAAConsensusScraping@677] Success OGC
+06/30/2562 17:18:34 [INFO] [CompanyHighlights@542] Success OGC
+06/30/2562 17:18:43 [INFO] [StockScraping@840] Success OGC
+06/30/2562 17:18:43 [INFO] [Run@241] Run 82 ROCK
+06/30/2562 17:18:45 [INFO] [IAAConsensusScraping@677] Success ROCK
+06/30/2562 17:18:58 [INFO] [CompanyHighlights@542] Success ROCK
+06/30/2562 17:19:07 [INFO] [StockScraping@840] Success ROCK
+06/30/2562 17:19:07 [INFO] [Run@241] Run 83 SIAM
+06/30/2562 17:19:09 [INFO] [IAAConsensusScraping@677] Success SIAM
+06/30/2562 17:19:22 [INFO] [CompanyHighlights@542] Success SIAM
+06/30/2562 17:19:31 [INFO] [StockScraping@840] Success SIAM
+06/30/2562 17:19:31 [INFO] [Run@241] Run 84 TSR
+06/30/2562 17:19:32 [INFO] [IAAConsensusScraping@677] Success TSR
+06/30/2562 17:19:46 [INFO] [CompanyHighlights@542] Success TSR
+06/30/2562 17:19:55 [INFO] [StockScraping@840] Success TSR
+06/30/2562 17:19:55 [INFO] [Run@241] Run 85 APCO
+06/30/2562 17:19:57 [INFO] [IAAConsensusScraping@677] Success APCO
+06/30/2562 17:20:11 [INFO] [CompanyHighlights@542] Success APCO
+06/30/2562 17:20:21 [INFO] [StockScraping@840] Success APCO
+06/30/2562 17:20:21 [INFO] [Run@241] Run 86 DDD
+06/30/2562 17:20:25 [INFO] [IAAConsensusScraping@677] Success DDD
+06/30/2562 17:20:33 [INFO] [CompanyHighlights@542] Success DDD
+06/30/2562 17:20:43 [INFO] [StockScraping@840] Success DDD
+06/30/2562 17:20:43 [INFO] [Run@241] Run 87 JCT
+06/30/2562 17:20:45 [INFO] [IAAConsensusScraping@677] Success JCT
+06/30/2562 17:20:58 [INFO] [CompanyHighlights@542] Success JCT
+06/30/2562 17:21:07 [INFO] [StockScraping@840] Success JCT
+06/30/2562 17:21:07 [INFO] [Run@241] Run 88 OCC
+06/30/2562 17:21:09 [INFO] [IAAConsensusScraping@677] Success OCC
+06/30/2562 17:21:22 [INFO] [CompanyHighlights@542] Success OCC
+06/30/2562 17:21:32 [INFO] [StockScraping@840] Success OCC
+06/30/2562 17:21:32 [INFO] [Run@241] Run 89 S & J
+06/30/2562 17:21:33 [INFO] [IAAConsensusScraping@677] Success S & J
+06/30/2562 17:21:47 [INFO] [CompanyHighlights@542] Success S & J
+06/30/2562 17:21:47 [ERROR] [StockScraping@803] Not scraping data from https://www.finnomena.com/stock/S+%26+J
+06/30/2562 17:21:56 [INFO] [StockScraping@840] Success S & J
+06/30/2562 17:21:56 [INFO] [Run@241] Run 90 STHAI
+06/30/2562 17:21:57 [INFO] [IAAConsensusScraping@677] Success STHAI
+06/30/2562 17:22:08 [INFO] [CompanyHighlights@542] Success STHAI
+06/30/2562 17:22:17 [INFO] [StockScraping@840] Success STHAI
+06/30/2562 17:22:17 [INFO] [Run@241] Run 91 TNR
+06/30/2562 17:22:18 [INFO] [IAAConsensusScraping@677] Success TNR
+06/30/2562 17:22:29 [INFO] [CompanyHighlights@542] Success TNR
+06/30/2562 17:22:38 [INFO] [StockScraping@840] Success TNR
+06/30/2562 17:22:38 [INFO] [Run@241] Run 92 TOG
+06/30/2562 17:22:40 [INFO] [IAAConsensusScraping@677] Success TOG
+06/30/2562 17:22:53 [INFO] [CompanyHighlights@542] Success TOG
+06/30/2562 17:23:02 [INFO] [StockScraping@840] Success TOG
+06/30/2562 17:23:02 [INFO] [Run@241] Run 93 BAY
+06/30/2562 17:23:08 [INFO] [IAAConsensusScraping@677] Success BAY
+06/30/2562 17:23:21 [INFO] [CompanyHighlights@542] Success BAY
+06/30/2562 17:23:31 [INFO] [StockScraping@840] Success BAY
+06/30/2562 17:23:31 [INFO] [Run@241] Run 94 BBL
+06/30/2562 17:23:40 [INFO] [IAAConsensusScraping@677] Success BBL
+06/30/2562 17:23:53 [INFO] [CompanyHighlights@542] Success BBL
+06/30/2562 17:24:02 [INFO] [StockScraping@840] Success BBL
+06/30/2562 17:24:02 [INFO] [Run@241] Run 95 CIMBT
+06/30/2562 17:24:03 [INFO] [IAAConsensusScraping@677] Success CIMBT
+06/30/2562 17:24:17 [INFO] [CompanyHighlights@542] Success CIMBT
+06/30/2562 17:24:27 [INFO] [StockScraping@840] Success CIMBT
+06/30/2562 17:24:27 [INFO] [Run@241] Run 96 KBANK
+06/30/2562 17:24:34 [INFO] [IAAConsensusScraping@677] Success KBANK
+06/30/2562 17:24:47 [INFO] [CompanyHighlights@542] Success KBANK
+06/30/2562 17:24:56 [INFO] [StockScraping@840] Success KBANK
+06/30/2562 17:24:56 [INFO] [Run@241] Run 97 KKP
+06/30/2562 17:25:04 [INFO] [IAAConsensusScraping@677] Success KKP
+06/30/2562 17:25:17 [INFO] [CompanyHighlights@542] Success KKP
+06/30/2562 17:25:26 [INFO] [StockScraping@840] Success KKP
+06/30/2562 17:25:26 [INFO] [Run@241] Run 98 KTB
+06/30/2562 17:25:35 [INFO] [IAAConsensusScraping@677] Success KTB
+06/30/2562 17:25:48 [INFO] [CompanyHighlights@542] Success KTB
+06/30/2562 17:25:58 [INFO] [StockScraping@840] Success KTB
+06/30/2562 17:25:58 [INFO] [Run@241] Run 99 LHFG
+06/30/2562 17:26:00 [INFO] [IAAConsensusScraping@677] Success LHFG
+06/30/2562 17:26:13 [INFO] [CompanyHighlights@542] Success LHFG
+06/30/2562 17:26:23 [INFO] [StockScraping@840] Success LHFG
+06/30/2562 17:26:23 [INFO] [Run@241] Run 100 SCB
+06/30/2562 17:26:32 [INFO] [IAAConsensusScraping@677] Success SCB
+06/30/2562 17:26:45 [INFO] [CompanyHighlights@542] Success SCB
+06/30/2562 17:26:54 [INFO] [StockScraping@840] Success SCB
+06/30/2562 17:26:54 [INFO] [Run@241] Run 101 TCAP
+06/30/2562 17:27:05 [INFO] [IAAConsensusScraping@677] Success TCAP
+06/30/2562 17:27:18 [INFO] [CompanyHighlights@542] Success TCAP
+06/30/2562 17:27:27 [INFO] [StockScraping@840] Success TCAP
+06/30/2562 17:27:27 [INFO] [Run@241] Run 102 TISCO
+06/30/2562 17:27:36 [INFO] [IAAConsensusScraping@677] Success TISCO
+06/30/2562 17:27:50 [INFO] [CompanyHighlights@542] Success TISCO
+06/30/2562 17:27:59 [INFO] [StockScraping@840] Success TISCO
+06/30/2562 17:27:59 [INFO] [Run@241] Run 103 TMB
+06/30/2562 17:28:07 [INFO] [IAAConsensusScraping@677] Success TMB
+06/30/2562 17:28:20 [INFO] [CompanyHighlights@542] Success TMB
+06/30/2562 17:28:29 [INFO] [StockScraping@840] Success TMB
+06/30/2562 17:28:29 [INFO] [Run@241] Run 104 AEC
+06/30/2562 17:28:31 [INFO] [IAAConsensusScraping@677] Success AEC
+06/30/2562 17:28:44 [INFO] [CompanyHighlights@542] Success AEC
+06/30/2562 17:28:53 [INFO] [StockScraping@840] Success AEC
+06/30/2562 17:28:53 [INFO] [Run@241] Run 105 AEONTS
+06/30/2562 17:28:59 [INFO] [IAAConsensusScraping@677] Success AEONTS
+06/30/2562 17:29:12 [INFO] [CompanyHighlights@542] Success AEONTS
+06/30/2562 17:29:21 [INFO] [StockScraping@840] Success AEONTS
+06/30/2562 17:29:21 [INFO] [Run@241] Run 106 AMANAH
+06/30/2562 17:29:23 [INFO] [IAAConsensusScraping@677] Success AMANAH
+06/30/2562 17:29:37 [INFO] [CompanyHighlights@542] Success AMANAH
+06/30/2562 17:29:46 [INFO] [StockScraping@840] Success AMANAH
+06/30/2562 17:29:46 [INFO] [Run@241] Run 107 ASAP
+06/30/2562 17:29:48 [INFO] [IAAConsensusScraping@677] Success ASAP
+06/30/2562 17:29:56 [INFO] [CompanyHighlights@542] Success ASAP
+06/30/2562 17:30:06 [INFO] [StockScraping@840] Success ASAP
+06/30/2562 17:30:06 [INFO] [Run@241] Run 108 ASK
+06/30/2562 17:30:09 [INFO] [IAAConsensusScraping@677] Success ASK
+06/30/2562 17:30:22 [INFO] [CompanyHighlights@542] Success ASK
+06/30/2562 17:30:31 [INFO] [StockScraping@840] Success ASK
+06/30/2562 17:30:31 [INFO] [Run@241] Run 109 ASP
+06/30/2562 17:30:34 [INFO] [IAAConsensusScraping@677] Success ASP
+06/30/2562 17:30:47 [INFO] [CompanyHighlights@542] Success ASP
+06/30/2562 17:30:57 [INFO] [StockScraping@840] Success ASP
+06/30/2562 17:30:57 [INFO] [Run@241] Run 110 BFIT
+06/30/2562 17:30:58 [INFO] [IAAConsensusScraping@677] Success BFIT
+06/30/2562 17:31:11 [INFO] [CompanyHighlights@542] Success BFIT
+06/30/2562 17:31:21 [INFO] [StockScraping@840] Success BFIT
+06/30/2562 17:31:21 [INFO] [Run@241] Run 111 CGH
+06/30/2562 17:31:23 [INFO] [IAAConsensusScraping@677] Success CGH
+06/30/2562 17:31:36 [INFO] [CompanyHighlights@542] Success CGH
+06/30/2562 17:31:45 [INFO] [StockScraping@840] Success CGH
+06/30/2562 17:31:45 [INFO] [Run@241] Run 112 CNS
+06/30/2562 17:31:47 [INFO] [IAAConsensusScraping@677] Success CNS
+06/30/2562 17:32:00 [INFO] [CompanyHighlights@542] Success CNS
+06/30/2562 17:32:10 [INFO] [StockScraping@840] Success CNS
+06/30/2562 17:32:10 [INFO] [Run@241] Run 113 ECL
+06/30/2562 17:32:11 [INFO] [IAAConsensusScraping@677] Success ECL
+06/30/2562 17:32:24 [INFO] [CompanyHighlights@542] Success ECL
+06/30/2562 17:32:34 [INFO] [StockScraping@840] Success ECL
+06/30/2562 17:32:34 [INFO] [Run@241] Run 114 FNS
+06/30/2562 17:32:35 [INFO] [IAAConsensusScraping@677] Success FNS
+06/30/2562 17:32:48 [INFO] [CompanyHighlights@542] Success FNS
+06/30/2562 17:32:58 [INFO] [StockScraping@840] Success FNS
+06/30/2562 17:32:58 [INFO] [Run@241] Run 115 FSS
+06/30/2562 17:32:59 [INFO] [IAAConsensusScraping@677] Success FSS
+06/30/2562 17:33:13 [INFO] [CompanyHighlights@542] Success FSS
+06/30/2562 17:33:22 [INFO] [StockScraping@840] Success FSS
+06/30/2562 17:33:22 [INFO] [Run@241] Run 116 GBX
+06/30/2562 17:33:23 [INFO] [IAAConsensusScraping@677] Success GBX
+06/30/2562 17:33:37 [INFO] [CompanyHighlights@542] Success GBX
+06/30/2562 17:33:46 [INFO] [StockScraping@840] Success GBX
+06/30/2562 17:33:46 [INFO] [Run@241] Run 117 GL
+06/30/2562 17:33:47 [INFO] [IAAConsensusScraping@677] Success GL
+06/30/2562 17:34:00 [INFO] [CompanyHighlights@542] Success GL
+06/30/2562 17:34:10 [INFO] [StockScraping@840] Success GL
+06/30/2562 17:34:10 [INFO] [Run@241] Run 118 IFS
+06/30/2562 17:34:12 [INFO] [IAAConsensusScraping@677] Success IFS
+06/30/2562 17:34:25 [INFO] [CompanyHighlights@542] Success IFS
+06/30/2562 17:34:34 [INFO] [StockScraping@840] Success IFS
+06/30/2562 17:34:34 [INFO] [Run@241] Run 119 JMT
+06/30/2562 17:34:38 [INFO] [IAAConsensusScraping@677] Success JMT
+06/30/2562 17:34:51 [INFO] [CompanyHighlights@542] Success JMT
+06/30/2562 17:35:01 [INFO] [StockScraping@840] Success JMT
+06/30/2562 17:35:01 [INFO] [Run@241] Run 120 KCAR
+06/30/2562 17:35:03 [INFO] [IAAConsensusScraping@677] Success KCAR
+06/30/2562 17:35:17 [INFO] [CompanyHighlights@542] Success KCAR
+06/30/2562 17:35:26 [INFO] [StockScraping@840] Success KCAR
+06/30/2562 17:35:26 [INFO] [Run@241] Run 121 KGI
+06/30/2562 17:35:28 [INFO] [IAAConsensusScraping@677] Success KGI
+06/30/2562 17:35:42 [INFO] [CompanyHighlights@542] Success KGI
+06/30/2562 17:35:51 [INFO] [StockScraping@840] Success KGI
+06/30/2562 17:35:51 [INFO] [Run@241] Run 122 KTC
+06/30/2562 17:36:02 [INFO] [IAAConsensusScraping@677] Success KTC
+06/30/2562 17:36:15 [INFO] [CompanyHighlights@542] Success KTC
+06/30/2562 17:36:25 [INFO] [StockScraping@840] Success KTC
+06/30/2562 17:36:25 [INFO] [Run@241] Run 123 MBKET
+06/30/2562 17:36:27 [INFO] [IAAConsensusScraping@677] Success MBKET
+06/30/2562 17:36:41 [INFO] [CompanyHighlights@542] Success MBKET
+06/30/2562 17:36:51 [INFO] [StockScraping@840] Success MBKET
+06/30/2562 17:36:51 [INFO] [Run@241] Run 124 MFC
+06/30/2562 17:36:52 [INFO] [IAAConsensusScraping@677] Success MFC
+06/30/2562 17:37:05 [INFO] [CompanyHighlights@542] Success MFC
+06/30/2562 17:37:14 [INFO] [StockScraping@840] Success MFC
+06/30/2562 17:37:14 [INFO] [Run@241] Run 125 ML
+06/30/2562 17:37:16 [INFO] [IAAConsensusScraping@677] Success ML
+06/30/2562 17:37:29 [INFO] [CompanyHighlights@542] Success ML
+06/30/2562 17:37:38 [INFO] [StockScraping@840] Success ML
+06/30/2562 17:37:38 [INFO] [Run@241] Run 126 MTC
+06/30/2562 17:37:43 [INFO] [IAAConsensusScraping@677] Success MTC
+06/30/2562 17:37:56 [INFO] [CompanyHighlights@542] Success MTC
+06/30/2562 17:38:06 [INFO] [StockScraping@840] Success MTC
+06/30/2562 17:38:06 [INFO] [Run@241] Run 127 PE
+06/30/2562 17:38:08 [INFO] [IAAConsensusScraping@677] Success PE
+06/30/2562 17:38:21 [INFO] [CompanyHighlights@542] Success PE
+06/30/2562 17:38:30 [INFO] [StockScraping@840] Success PE
+06/30/2562 17:38:30 [INFO] [Run@241] Run 128 PL
+06/30/2562 17:38:31 [INFO] [IAAConsensusScraping@677] Success PL
+06/30/2562 17:38:45 [INFO] [CompanyHighlights@542] Success PL
+06/30/2562 17:38:54 [INFO] [StockScraping@840] Success PL
+06/30/2562 17:38:54 [INFO] [Run@241] Run 129 S11
+06/30/2562 17:38:58 [INFO] [IAAConsensusScraping@677] Success S11
+06/30/2562 17:39:11 [INFO] [CompanyHighlights@542] Success S11
+06/30/2562 17:39:20 [INFO] [StockScraping@840] Success S11
+06/30/2562 17:39:20 [INFO] [Run@241] Run 130 SAWAD
+06/30/2562 17:39:35 [INFO] [IAAConsensusScraping@677] Success SAWAD
+06/30/2562 17:39:49 [INFO] [CompanyHighlights@542] Success SAWAD
+06/30/2562 17:39:59 [INFO] [StockScraping@840] Success SAWAD
+06/30/2562 17:39:59 [INFO] [Run@241] Run 131 THANI
+06/30/2562 17:40:01 [INFO] [IAAConsensusScraping@677] Success THANI
+06/30/2562 17:40:14 [INFO] [CompanyHighlights@542] Success THANI
+06/30/2562 17:40:24 [INFO] [StockScraping@840] Success THANI
+06/30/2562 17:40:24 [INFO] [Run@241] Run 132 TK
+06/30/2562 17:40:28 [INFO] [IAAConsensusScraping@677] Success TK
+06/30/2562 17:40:42 [INFO] [CompanyHighlights@542] Success TK
+06/30/2562 17:40:51 [INFO] [StockScraping@840] Success TK
+06/30/2562 17:40:51 [INFO] [Run@241] Run 133 TNITY
+06/30/2562 17:40:52 [INFO] [IAAConsensusScraping@677] Success TNITY
+06/30/2562 17:41:05 [INFO] [CompanyHighlights@542] Success TNITY
+06/30/2562 17:41:15 [INFO] [StockScraping@840] Success TNITY
+06/30/2562 17:41:15 [INFO] [Run@241] Run 134 UOBKH
+06/30/2562 17:41:17 [INFO] [IAAConsensusScraping@677] Success UOBKH
+06/30/2562 17:41:30 [INFO] [CompanyHighlights@542] Success UOBKH
+06/30/2562 17:41:40 [INFO] [StockScraping@840] Success UOBKH
+06/30/2562 17:41:40 [INFO] [Run@241] Run 135 ZMICO
+06/30/2562 17:41:41 [INFO] [IAAConsensusScraping@677] Success ZMICO
+06/30/2562 17:41:55 [INFO] [CompanyHighlights@542] Success ZMICO
+06/30/2562 17:42:04 [INFO] [StockScraping@840] Success ZMICO
+06/30/2562 17:42:04 [INFO] [Run@241] Run 136 AYUD
+06/30/2562 17:42:05 [INFO] [IAAConsensusScraping@677] Success AYUD
+06/30/2562 17:42:18 [INFO] [CompanyHighlights@542] Success AYUD
+06/30/2562 17:42:28 [INFO] [StockScraping@840] Success AYUD
+06/30/2562 17:42:28 [INFO] [Run@241] Run 137 BKI
+06/30/2562 17:42:31 [INFO] [IAAConsensusScraping@677] Success BKI
+06/30/2562 17:42:44 [INFO] [CompanyHighlights@542] Success BKI
+06/30/2562 17:42:53 [INFO] [StockScraping@840] Success BKI
+06/30/2562 17:42:53 [INFO] [Run@241] Run 138 BLA
+06/30/2562 17:42:58 [INFO] [IAAConsensusScraping@677] Success BLA
+06/30/2562 17:43:11 [INFO] [CompanyHighlights@542] Success BLA
+06/30/2562 17:43:21 [INFO] [StockScraping@840] Success BLA
+06/30/2562 17:43:21 [INFO] [Run@241] Run 139 BUI
+06/30/2562 17:43:22 [INFO] [IAAConsensusScraping@677] Success BUI
+06/30/2562 17:43:35 [INFO] [CompanyHighlights@542] Success BUI
+06/30/2562 17:43:45 [INFO] [StockScraping@840] Success BUI
+06/30/2562 17:43:45 [INFO] [Run@241] Run 140 CHARAN
+06/30/2562 17:43:46 [INFO] [IAAConsensusScraping@677] Success CHARAN
+06/30/2562 17:43:59 [INFO] [CompanyHighlights@542] Success CHARAN
+06/30/2562 17:44:08 [INFO] [StockScraping@840] Success CHARAN
+06/30/2562 17:44:08 [INFO] [Run@241] Run 141 INSURE
+06/30/2562 17:44:10 [INFO] [IAAConsensusScraping@677] Success INSURE
+06/30/2562 17:44:23 [INFO] [CompanyHighlights@542] Success INSURE
+06/30/2562 17:44:32 [INFO] [StockScraping@840] Success INSURE
+06/30/2562 17:44:32 [INFO] [Run@241] Run 142 MTI
+06/30/2562 17:44:34 [INFO] [IAAConsensusScraping@677] Success MTI
+06/30/2562 17:44:47 [INFO] [CompanyHighlights@542] Success MTI
+06/30/2562 17:44:56 [INFO] [StockScraping@840] Success MTI
+06/30/2562 17:44:56 [INFO] [Run@241] Run 143 NKI
+06/30/2562 17:44:58 [INFO] [IAAConsensusScraping@677] Success NKI
+06/30/2562 17:45:11 [INFO] [CompanyHighlights@542] Success NKI
+06/30/2562 17:45:21 [INFO] [StockScraping@840] Success NKI
+06/30/2562 17:45:21 [INFO] [Run@241] Run 144 NSI
+06/30/2562 17:45:22 [INFO] [IAAConsensusScraping@677] Success NSI
+06/30/2562 17:45:36 [INFO] [CompanyHighlights@542] Success NSI
+06/30/2562 17:45:45 [INFO] [StockScraping@840] Success NSI
+06/30/2562 17:45:45 [INFO] [Run@241] Run 145 SMK
+06/30/2562 17:45:46 [INFO] [IAAConsensusScraping@677] Success SMK
+06/30/2562 17:46:00 [INFO] [CompanyHighlights@542] Success SMK
+06/30/2562 17:46:09 [INFO] [StockScraping@840] Success SMK
+06/30/2562 17:46:09 [INFO] [Run@241] Run 146 THRE
+06/30/2562 17:46:13 [INFO] [IAAConsensusScraping@677] Success THRE
+06/30/2562 17:46:26 [INFO] [CompanyHighlights@542] Success THRE
+06/30/2562 17:46:35 [INFO] [StockScraping@840] Success THRE
+06/30/2562 17:46:35 [INFO] [Run@241] Run 147 THREL
+06/30/2562 17:46:37 [INFO] [IAAConsensusScraping@677] Success THREL
+06/30/2562 17:46:50 [INFO] [CompanyHighlights@542] Success THREL
+06/30/2562 17:46:59 [INFO] [StockScraping@840] Success THREL
+06/30/2562 17:46:59 [INFO] [Run@241] Run 148 TIC
+06/30/2562 17:47:01 [INFO] [IAAConsensusScraping@677] Success TIC
+06/30/2562 17:47:14 [INFO] [CompanyHighlights@542] Success TIC
+06/30/2562 17:47:23 [INFO] [StockScraping@840] Success TIC
+06/30/2562 17:47:23 [INFO] [Run@241] Run 149 TIP
+06/30/2562 17:47:24 [INFO] [IAAConsensusScraping@677] Success TIP
+06/30/2562 17:47:38 [INFO] [CompanyHighlights@542] Success TIP
+06/30/2562 17:47:47 [INFO] [StockScraping@840] Success TIP
+06/30/2562 17:47:47 [INFO] [Run@241] Run 150 TQM
+06/30/2562 17:47:53 [INFO] [IAAConsensusScraping@677] Success TQM
+06/30/2562 17:47:58 [INFO] [CompanyHighlights@542] Success TQM
+06/30/2562 17:48:08 [INFO] [StockScraping@840] Success TQM
+06/30/2562 17:48:08 [INFO] [Run@241] Run 151 TSI
+06/30/2562 17:48:09 [INFO] [IAAConsensusScraping@677] Success TSI
+06/30/2562 17:48:23 [INFO] [CompanyHighlights@542] Success TSI
+06/30/2562 17:48:32 [INFO] [StockScraping@840] Success TSI
+06/30/2562 17:48:32 [INFO] [Run@241] Run 152 TVI
+06/30/2562 17:48:34 [INFO] [IAAConsensusScraping@677] Success TVI
+06/30/2562 17:48:48 [INFO] [CompanyHighlights@542] Success TVI
+06/30/2562 17:48:57 [INFO] [StockScraping@840] Success TVI
+06/30/2562 17:48:57 [INFO] [Run@241] Run 153 AH
+06/30/2562 17:49:07 [INFO] [IAAConsensusScraping@677] Success AH
+06/30/2562 17:49:20 [INFO] [CompanyHighlights@542] Success AH
+06/30/2562 17:49:29 [INFO] [StockScraping@840] Success AH
+06/30/2562 17:49:29 [INFO] [Run@241] Run 154 APCS
+06/30/2562 17:49:31 [INFO] [IAAConsensusScraping@677] Success APCS
+06/30/2562 17:49:44 [INFO] [CompanyHighlights@542] Success APCS
+06/30/2562 17:49:53 [INFO] [StockScraping@840] Success APCS
+06/30/2562 17:49:53 [INFO] [Run@241] Run 155 BAT-3K
+06/30/2562 17:49:55 [INFO] [IAAConsensusScraping@677] Success BAT-3K
+06/30/2562 17:50:08 [INFO] [CompanyHighlights@542] Success BAT-3K
+06/30/2562 17:50:18 [INFO] [StockScraping@840] Success BAT-3K
+06/30/2562 17:50:18 [INFO] [Run@241] Run 156 CWT
+06/30/2562 17:50:19 [INFO] [IAAConsensusScraping@677] Success CWT
+06/30/2562 17:50:33 [INFO] [CompanyHighlights@542] Success CWT
+06/30/2562 17:50:43 [INFO] [StockScraping@840] Success CWT
+06/30/2562 17:50:43 [INFO] [Run@241] Run 157 EASON
+06/30/2562 17:50:44 [INFO] [IAAConsensusScraping@677] Success EASON
+06/30/2562 17:50:58 [INFO] [CompanyHighlights@542] Success EASON
+06/30/2562 17:51:08 [INFO] [StockScraping@840] Success EASON
+06/30/2562 17:51:08 [INFO] [Run@241] Run 158 GYT
+06/30/2562 17:51:09 [INFO] [IAAConsensusScraping@677] Success GYT
+06/30/2562 17:51:22 [INFO] [CompanyHighlights@542] Success GYT
+06/30/2562 17:51:32 [INFO] [StockScraping@840] Success GYT
+06/30/2562 17:51:32 [INFO] [Run@241] Run 159 HFT
+06/30/2562 17:51:34 [INFO] [IAAConsensusScraping@677] Success HFT
+06/30/2562 17:51:47 [INFO] [CompanyHighlights@542] Success HFT
+06/30/2562 17:51:56 [INFO] [StockScraping@840] Success HFT
+06/30/2562 17:51:56 [INFO] [Run@241] Run 160 IHL
+06/30/2562 17:51:58 [INFO] [IAAConsensusScraping@677] Success IHL
+06/30/2562 17:52:11 [INFO] [CompanyHighlights@542] Success IHL
+06/30/2562 17:52:20 [INFO] [StockScraping@840] Success IHL
+06/30/2562 17:52:20 [INFO] [Run@241] Run 161 INGRS
+06/30/2562 17:52:22 [INFO] [IAAConsensusScraping@677] Success INGRS
+06/30/2562 17:52:30 [INFO] [CompanyHighlights@542] Success INGRS
+06/30/2562 17:52:40 [INFO] [StockScraping@840] Success INGRS
+06/30/2562 17:52:40 [INFO] [Run@241] Run 162 IRC
+06/30/2562 17:52:42 [INFO] [IAAConsensusScraping@677] Success IRC
+06/30/2562 17:52:56 [INFO] [CompanyHighlights@542] Success IRC
+06/30/2562 17:53:05 [INFO] [StockScraping@840] Success IRC
+06/30/2562 17:53:05 [INFO] [Run@241] Run 163 PCSGH
+06/30/2562 17:53:08 [INFO] [IAAConsensusScraping@677] Success PCSGH
+06/30/2562 17:53:22 [INFO] [CompanyHighlights@542] Success PCSGH
+06/30/2562 17:53:32 [INFO] [StockScraping@840] Success PCSGH
+06/30/2562 17:53:32 [INFO] [Run@241] Run 164 SAT
+06/30/2562 17:53:36 [INFO] [IAAConsensusScraping@677] Success SAT
+06/30/2562 17:53:49 [INFO] [CompanyHighlights@542] Success SAT
+06/30/2562 17:53:59 [INFO] [StockScraping@840] Success SAT
+06/30/2562 17:53:59 [INFO] [Run@241] Run 165 SPG
+06/30/2562 17:54:00 [INFO] [IAAConsensusScraping@677] Success SPG
+06/30/2562 17:54:14 [INFO] [CompanyHighlights@542] Success SPG
+06/30/2562 17:54:23 [INFO] [StockScraping@840] Success SPG
+06/30/2562 17:54:23 [INFO] [Run@241] Run 166 STANLY
+06/30/2562 17:54:32 [INFO] [IAAConsensusScraping@677] Success STANLY
+06/30/2562 17:54:45 [INFO] [CompanyHighlights@542] Success STANLY
+06/30/2562 17:54:54 [INFO] [StockScraping@840] Success STANLY
+06/30/2562 17:54:54 [INFO] [Run@241] Run 167 TKT
+06/30/2562 17:54:56 [INFO] [IAAConsensusScraping@677] Success TKT
+06/30/2562 17:55:09 [INFO] [CompanyHighlights@542] Success TKT
+06/30/2562 17:55:18 [INFO] [StockScraping@840] Success TKT
+06/30/2562 17:55:18 [INFO] [Run@241] Run 168 TNPC
+06/30/2562 17:55:19 [INFO] [IAAConsensusScraping@677] Success TNPC
+06/30/2562 17:55:33 [INFO] [CompanyHighlights@542] Success TNPC
+06/30/2562 17:55:42 [INFO] [StockScraping@840] Success TNPC
+06/30/2562 17:55:42 [INFO] [Run@241] Run 169 TRU
+06/30/2562 17:55:43 [INFO] [IAAConsensusScraping@677] Success TRU
+06/30/2562 17:55:57 [INFO] [CompanyHighlights@542] Success TRU
+06/30/2562 17:56:06 [INFO] [StockScraping@840] Success TRU
+06/30/2562 17:56:06 [INFO] [Run@241] Run 170 TSC
+06/30/2562 17:56:07 [INFO] [IAAConsensusScraping@677] Success TSC
+06/30/2562 17:56:21 [INFO] [CompanyHighlights@542] Success TSC
+06/30/2562 17:56:30 [INFO] [StockScraping@840] Success TSC
+06/30/2562 17:56:30 [INFO] [Run@241] Run 171 YNP
+06/30/2562 17:56:31 [INFO] [IAAConsensusScraping@677] Success YNP
+06/30/2562 17:56:45 [INFO] [CompanyHighlights@542] Success YNP
+06/30/2562 17:56:54 [INFO] [StockScraping@840] Success YNP
+06/30/2562 17:56:54 [INFO] [Run@241] Run 172 ALLA
+06/30/2562 17:56:55 [INFO] [IAAConsensusScraping@677] Success ALLA
+06/30/2562 17:57:06 [INFO] [CompanyHighlights@542] Success ALLA
+06/30/2562 17:57:15 [INFO] [StockScraping@840] Success ALLA
+06/30/2562 17:57:15 [INFO] [Run@241] Run 173 ASEFA
+06/30/2562 17:57:18 [INFO] [IAAConsensusScraping@677] Success ASEFA
+06/30/2562 17:57:31 [INFO] [CompanyHighlights@542] Success ASEFA
+06/30/2562 17:57:40 [INFO] [StockScraping@840] Success ASEFA
+06/30/2562 17:57:40 [INFO] [Run@241] Run 174 CPT
+06/30/2562 17:57:42 [INFO] [IAAConsensusScraping@677] Success CPT
+06/30/2562 17:57:50 [INFO] [CompanyHighlights@542] Success CPT
+06/30/2562 17:58:00 [INFO] [StockScraping@840] Success CPT
+06/30/2562 17:58:00 [INFO] [Run@241] Run 175 CRANE
+06/30/2562 17:58:01 [INFO] [IAAConsensusScraping@677] Success CRANE
+06/30/2562 17:58:14 [INFO] [CompanyHighlights@542] Success CRANE
+06/30/2562 17:58:24 [INFO] [StockScraping@840] Success CRANE
+06/30/2562 17:58:24 [INFO] [Run@241] Run 176 CTW
+06/30/2562 17:58:25 [INFO] [IAAConsensusScraping@677] Success CTW
+06/30/2562 17:58:38 [INFO] [CompanyHighlights@542] Success CTW
+06/30/2562 17:58:47 [INFO] [StockScraping@840] Success CTW
+06/30/2562 17:58:47 [INFO] [Run@241] Run 177 FMT
+06/30/2562 17:58:49 [INFO] [IAAConsensusScraping@677] Success FMT
+06/30/2562 17:59:02 [INFO] [CompanyHighlights@542] Success FMT
+06/30/2562 17:59:11 [INFO] [StockScraping@840] Success FMT
+06/30/2562 17:59:11 [INFO] [Run@241] Run 178 HTECH
+06/30/2562 17:59:13 [INFO] [IAAConsensusScraping@677] Success HTECH
+06/30/2562 17:59:26 [INFO] [CompanyHighlights@542] Success HTECH
+06/30/2562 17:59:35 [INFO] [StockScraping@840] Success HTECH
+06/30/2562 17:59:35 [INFO] [Run@241] Run 179 KKC
+06/30/2562 17:59:37 [INFO] [IAAConsensusScraping@677] Success KKC
+06/30/2562 17:59:50 [INFO] [CompanyHighlights@542] Success KKC
+06/30/2562 17:59:59 [INFO] [StockScraping@840] Success KKC
+06/30/2562 17:59:59 [INFO] [Run@241] Run 180 PK
+06/30/2562 18:00:01 [INFO] [IAAConsensusScraping@677] Success PK
+06/30/2562 18:00:14 [INFO] [CompanyHighlights@542] Success PK
+06/30/2562 18:00:23 [INFO] [StockScraping@840] Success PK
+06/30/2562 18:00:23 [INFO] [Run@241] Run 181 SNC
+06/30/2562 18:00:26 [INFO] [IAAConsensusScraping@677] Success SNC
+06/30/2562 18:00:39 [INFO] [CompanyHighlights@542] Success SNC
+06/30/2562 18:00:48 [INFO] [StockScraping@840] Success SNC
+06/30/2562 18:00:48 [INFO] [Run@241] Run 182 TCJ
+06/30/2562 18:00:49 [INFO] [IAAConsensusScraping@677] Success TCJ
+06/30/2562 18:01:03 [INFO] [CompanyHighlights@542] Success TCJ
+06/30/2562 18:01:13 [INFO] [StockScraping@840] Success TCJ
+06/30/2562 18:01:13 [INFO] [Run@241] Run 183 VARO
+06/30/2562 18:01:14 [INFO] [IAAConsensusScraping@677] Success VARO
+06/30/2562 18:01:27 [INFO] [CompanyHighlights@542] Success VARO
+06/30/2562 18:01:36 [INFO] [StockScraping@840] Success VARO
+06/30/2562 18:01:36 [INFO] [Run@241] Run 184 UTP
+06/30/2562 18:01:38 [INFO] [IAAConsensusScraping@677] Success UTP
+06/30/2562 18:01:51 [INFO] [CompanyHighlights@542] Success UTP
+06/30/2562 18:02:00 [INFO] [StockScraping@840] Success UTP
+06/30/2562 18:02:00 [INFO] [Run@241] Run 185 BCT
+06/30/2562 18:02:02 [INFO] [IAAConsensusScraping@677] Success BCT
+06/30/2562 18:02:15 [INFO] [CompanyHighlights@542] Success BCT
+06/30/2562 18:02:24 [INFO] [StockScraping@840] Success BCT
+06/30/2562 18:02:24 [INFO] [Run@241] Run 186 CMAN
+06/30/2562 18:02:28 [INFO] [IAAConsensusScraping@677] Success CMAN
+06/30/2562 18:02:34 [INFO] [CompanyHighlights@542] Success CMAN
+06/30/2562 18:02:43 [INFO] [StockScraping@840] Success CMAN
+06/30/2562 18:02:43 [INFO] [Run@241] Run 187 GC
+06/30/2562 18:02:44 [INFO] [IAAConsensusScraping@677] Success GC
+06/30/2562 18:02:58 [INFO] [CompanyHighlights@542] Success GC
+06/30/2562 18:03:07 [INFO] [StockScraping@840] Success GC
+06/30/2562 18:03:07 [INFO] [Run@241] Run 188 GGC
+06/30/2562 18:03:11 [INFO] [IAAConsensusScraping@677] Success GGC
+06/30/2562 18:03:19 [INFO] [CompanyHighlights@542] Success GGC
+06/30/2562 18:03:28 [INFO] [StockScraping@840] Success GGC
+06/30/2562 18:03:28 [INFO] [Run@241] Run 189 GIFT
+06/30/2562 18:03:30 [INFO] [IAAConsensusScraping@677] Success GIFT
+06/30/2562 18:03:43 [INFO] [CompanyHighlights@542] Success GIFT
+06/30/2562 18:03:52 [INFO] [StockScraping@840] Success GIFT
+06/30/2562 18:03:52 [INFO] [Run@241] Run 190 IVL
+06/30/2562 18:04:00 [INFO] [IAAConsensusScraping@677] Success IVL
+06/30/2562 18:04:13 [INFO] [CompanyHighlights@542] Success IVL
+06/30/2562 18:04:22 [INFO] [StockScraping@840] Success IVL
+06/30/2562 18:04:22 [INFO] [Run@241] Run 191 NFC
+06/30/2562 18:04:24 [INFO] [IAAConsensusScraping@677] Success NFC
+06/30/2562 18:04:37 [INFO] [CompanyHighlights@542] Success NFC
+06/30/2562 18:04:47 [INFO] [StockScraping@840] Success NFC
+06/30/2562 18:04:47 [INFO] [Run@241] Run 192 PATO
+06/30/2562 18:04:48 [INFO] [IAAConsensusScraping@677] Success PATO
+06/30/2562 18:05:02 [INFO] [CompanyHighlights@542] Success PATO
+06/30/2562 18:05:11 [INFO] [StockScraping@840] Success PATO
+06/30/2562 18:05:11 [INFO] [Run@241] Run 193 PMTA
+06/30/2562 18:05:12 [INFO] [IAAConsensusScraping@677] Success PMTA
+06/30/2562 18:05:26 [INFO] [CompanyHighlights@542] Success PMTA
+06/30/2562 18:05:35 [INFO] [StockScraping@840] Success PMTA
+06/30/2562 18:05:35 [INFO] [Run@241] Run 194 PTTGC
+06/30/2562 18:05:44 [INFO] [IAAConsensusScraping@677] Success PTTGC
+06/30/2562 18:05:58 [INFO] [CompanyHighlights@542] Success PTTGC
+06/30/2562 18:06:07 [INFO] [StockScraping@840] Success PTTGC
+06/30/2562 18:06:07 [INFO] [Run@241] Run 195 SUTHA
+06/30/2562 18:06:08 [INFO] [IAAConsensusScraping@677] Success SUTHA
+06/30/2562 18:06:22 [INFO] [CompanyHighlights@542] Success SUTHA
+06/30/2562 18:06:31 [INFO] [StockScraping@840] Success SUTHA
+06/30/2562 18:06:31 [INFO] [Run@241] Run 196 TCCC
+06/30/2562 18:06:32 [INFO] [IAAConsensusScraping@677] Success TCCC
+06/30/2562 18:06:45 [INFO] [CompanyHighlights@542] Success TCCC
+06/30/2562 18:06:55 [INFO] [StockScraping@840] Success TCCC
+06/30/2562 18:06:55 [INFO] [Run@241] Run 197 TPA
+06/30/2562 18:06:56 [INFO] [IAAConsensusScraping@677] Success TPA
+06/30/2562 18:07:09 [INFO] [CompanyHighlights@542] Success TPA
+06/30/2562 18:07:18 [INFO] [StockScraping@840] Success TPA
+06/30/2562 18:07:18 [INFO] [Run@241] Run 198 UP
+06/30/2562 18:07:20 [INFO] [IAAConsensusScraping@677] Success UP
+06/30/2562 18:07:33 [INFO] [CompanyHighlights@542] Success UP
+06/30/2562 18:07:42 [INFO] [StockScraping@840] Success UP
+06/30/2562 18:07:42 [INFO] [Run@241] Run 199 VNT
+06/30/2562 18:07:45 [INFO] [IAAConsensusScraping@677] Success VNT
+06/30/2562 18:07:58 [INFO] [CompanyHighlights@542] Success VNT
+06/30/2562 18:08:07 [INFO] [StockScraping@840] Success VNT
+06/30/2562 18:08:07 [INFO] [Run@241] Run 200 WG
+06/30/2562 18:08:09 [INFO] [IAAConsensusScraping@677] Success WG
+06/30/2562 18:08:22 [INFO] [CompanyHighlights@542] Success WG
+06/30/2562 18:08:32 [INFO] [StockScraping@840] Success WG
+06/30/2562 18:08:32 [INFO] [Run@241] Run 201 YCI
+06/30/2562 18:08:34 [INFO] [IAAConsensusScraping@677] Success YCI
+06/30/2562 18:08:47 [INFO] [CompanyHighlights@542] Success YCI
+06/30/2562 18:08:57 [INFO] [StockScraping@840] Success YCI
+06/30/2562 18:08:57 [INFO] [Run@241] Run 202 AJ
+06/30/2562 18:08:58 [INFO] [IAAConsensusScraping@677] Success AJ
+06/30/2562 18:09:12 [INFO] [CompanyHighlights@542] Success AJ
+06/30/2562 18:09:22 [INFO] [StockScraping@840] Success AJ
+06/30/2562 18:09:22 [INFO] [Run@241] Run 203 ALUCON
+06/30/2562 18:09:23 [INFO] [IAAConsensusScraping@677] Success ALUCON
+06/30/2562 18:09:36 [INFO] [CompanyHighlights@542] Success ALUCON
+06/30/2562 18:09:46 [INFO] [StockScraping@840] Success ALUCON
+06/30/2562 18:09:46 [INFO] [Run@241] Run 204 BGC
+06/30/2562 18:09:49 [INFO] [IAAConsensusScraping@677] Success BGC
+06/30/2562 18:09:54 [INFO] [CompanyHighlights@542] Success BGC
+06/30/2562 18:10:04 [INFO] [StockScraping@840] Success BGC
+06/30/2562 18:10:04 [INFO] [Run@241] Run 205 CSC
+06/30/2562 18:10:05 [INFO] [IAAConsensusScraping@677] Success CSC
+06/30/2562 18:10:18 [INFO] [CompanyHighlights@542] Success CSC
+06/30/2562 18:10:28 [INFO] [StockScraping@840] Success CSC
+06/30/2562 18:10:28 [INFO] [Run@241] Run 206 NEP
+06/30/2562 18:10:29 [INFO] [IAAConsensusScraping@677] Success NEP
+06/30/2562 18:10:42 [INFO] [CompanyHighlights@542] Success NEP
+06/30/2562 18:10:52 [INFO] [StockScraping@840] Success NEP
+06/30/2562 18:10:52 [INFO] [Run@241] Run 207 NPPG
+06/30/2562 18:10:53 [INFO] [IAAConsensusScraping@677] Success NPPG
+06/30/2562 18:11:06 [INFO] [CompanyHighlights@542] Success NPPG
+06/30/2562 18:11:16 [INFO] [StockScraping@840] Success NPPG
+06/30/2562 18:11:16 [INFO] [Run@241] Run 208 PTL
+06/30/2562 18:11:17 [INFO] [IAAConsensusScraping@677] Success PTL
+06/30/2562 18:11:30 [INFO] [CompanyHighlights@542] Success PTL
+06/30/2562 18:11:40 [INFO] [StockScraping@840] Success PTL
+06/30/2562 18:11:40 [INFO] [Run@241] Run 209 SITHAI
+06/30/2562 18:11:41 [INFO] [IAAConsensusScraping@677] Success SITHAI
+06/30/2562 18:11:54 [INFO] [CompanyHighlights@542] Success SITHAI
+06/30/2562 18:12:04 [INFO] [StockScraping@840] Success SITHAI
+06/30/2562 18:12:04 [INFO] [Run@241] Run 210 SLP
+06/30/2562 18:12:06 [INFO] [IAAConsensusScraping@677] Success SLP
+06/30/2562 18:12:19 [INFO] [CompanyHighlights@542] Success SLP
+06/30/2562 18:12:29 [INFO] [StockScraping@840] Success SLP
+06/30/2562 18:12:29 [INFO] [Run@241] Run 211 SMPC
+06/30/2562 18:12:32 [INFO] [IAAConsensusScraping@677] Success SMPC
+06/30/2562 18:12:45 [INFO] [CompanyHighlights@542] Success SMPC
+06/30/2562 18:12:54 [INFO] [StockScraping@840] Success SMPC
+06/30/2562 18:12:54 [INFO] [Run@241] Run 212 SPACK
+06/30/2562 18:12:56 [INFO] [IAAConsensusScraping@677] Success SPACK
+06/30/2562 18:13:09 [INFO] [CompanyHighlights@542] Success SPACK
+06/30/2562 18:13:19 [INFO] [StockScraping@840] Success SPACK
+06/30/2562 18:13:19 [INFO] [Run@241] Run 213 TCOAT
+06/30/2562 18:13:21 [INFO] [IAAConsensusScraping@677] Success TCOAT
+06/30/2562 18:13:34 [INFO] [CompanyHighlights@542] Success TCOAT
+06/30/2562 18:13:43 [INFO] [StockScraping@840] Success TCOAT
+06/30/2562 18:13:43 [INFO] [Run@241] Run 214 TFI
+06/30/2562 18:13:45 [INFO] [IAAConsensusScraping@677] Success TFI
+06/30/2562 18:13:58 [INFO] [CompanyHighlights@542] Success TFI
+06/30/2562 18:14:07 [INFO] [StockScraping@840] Success TFI
+06/30/2562 18:14:07 [INFO] [Run@241] Run 215 THIP
+06/30/2562 18:14:09 [INFO] [IAAConsensusScraping@677] Success THIP
+06/30/2562 18:14:22 [INFO] [CompanyHighlights@542] Success THIP
+06/30/2562 18:14:31 [INFO] [StockScraping@840] Success THIP
+06/30/2562 18:14:31 [INFO] [Run@241] Run 216 TMD
+06/30/2562 18:14:33 [INFO] [IAAConsensusScraping@677] Success TMD
+06/30/2562 18:14:46 [INFO] [CompanyHighlights@542] Success TMD
+06/30/2562 18:14:55 [INFO] [StockScraping@840] Success TMD
+06/30/2562 18:14:55 [INFO] [Run@241] Run 217 TOPP
+06/30/2562 18:14:57 [INFO] [IAAConsensusScraping@677] Success TOPP
+06/30/2562 18:15:10 [INFO] [CompanyHighlights@542] Success TOPP
+06/30/2562 18:15:19 [INFO] [StockScraping@840] Success TOPP
+06/30/2562 18:15:19 [INFO] [Run@241] Run 218 TPBI
+06/30/2562 18:15:21 [INFO] [IAAConsensusScraping@677] Success TPBI
+06/30/2562 18:15:31 [INFO] [CompanyHighlights@542] Success TPBI
+06/30/2562 18:15:41 [INFO] [StockScraping@840] Success TPBI
+06/30/2562 18:15:41 [INFO] [Run@241] Run 219 TPP
+06/30/2562 18:15:42 [INFO] [IAAConsensusScraping@677] Success TPP
+06/30/2562 18:15:56 [INFO] [CompanyHighlights@542] Success TPP
+06/30/2562 18:16:06 [INFO] [StockScraping@840] Success TPP
+06/30/2562 18:16:06 [INFO] [Run@241] Run 220 AMC
+06/30/2562 18:16:07 [INFO] [IAAConsensusScraping@677] Success AMC
+06/30/2562 18:16:21 [INFO] [CompanyHighlights@542] Success AMC
+06/30/2562 18:16:30 [INFO] [StockScraping@840] Success AMC
+06/30/2562 18:16:30 [INFO] [Run@241] Run 221 BSBM
+06/30/2562 18:16:32 [INFO] [IAAConsensusScraping@677] Success BSBM
+06/30/2562 18:16:46 [INFO] [CompanyHighlights@542] Success BSBM
+06/30/2562 18:16:56 [INFO] [StockScraping@840] Success BSBM
+06/30/2562 18:16:56 [INFO] [Run@241] Run 222 CEN
+06/30/2562 18:16:57 [INFO] [IAAConsensusScraping@677] Success CEN
+06/30/2562 18:17:11 [INFO] [CompanyHighlights@542] Success CEN
+06/30/2562 18:17:20 [INFO] [StockScraping@840] Success CEN
+06/30/2562 18:17:20 [INFO] [Run@241] Run 223 CITY
+06/30/2562 18:17:21 [INFO] [IAAConsensusScraping@677] Success CITY
+06/30/2562 18:17:35 [INFO] [CompanyHighlights@542] Success CITY
+06/30/2562 18:17:45 [INFO] [StockScraping@840] Success CITY
+06/30/2562 18:17:45 [INFO] [Run@241] Run 224 CSP
+06/30/2562 18:17:46 [INFO] [IAAConsensusScraping@677] Success CSP
+06/30/2562 18:17:59 [INFO] [CompanyHighlights@542] Success CSP
+06/30/2562 18:18:09 [INFO] [StockScraping@840] Success CSP
+06/30/2562 18:18:09 [INFO] [Run@241] Run 225 GJS
+06/30/2562 18:18:10 [INFO] [IAAConsensusScraping@677] Success GJS
+06/30/2562 18:18:24 [INFO] [CompanyHighlights@542] Success GJS
+06/30/2562 18:18:33 [INFO] [StockScraping@840] Success GJS
+06/30/2562 18:18:33 [INFO] [Run@241] Run 226 GSTEL
+06/30/2562 18:18:34 [INFO] [IAAConsensusScraping@677] Success GSTEL
+06/30/2562 18:18:48 [INFO] [CompanyHighlights@542] Success GSTEL
+06/30/2562 18:18:57 [INFO] [StockScraping@840] Success GSTEL
+06/30/2562 18:18:57 [INFO] [Run@241] Run 227 INOX
+06/30/2562 18:18:58 [INFO] [IAAConsensusScraping@677] Success INOX
+06/30/2562 18:19:12 [INFO] [CompanyHighlights@542] Success INOX
+06/30/2562 18:19:22 [INFO] [StockScraping@840] Success INOX
+06/30/2562 18:19:22 [INFO] [Run@241] Run 228 LHK
+06/30/2562 18:19:23 [INFO] [IAAConsensusScraping@677] Success LHK
+06/30/2562 18:19:37 [INFO] [CompanyHighlights@542] Success LHK
+06/30/2562 18:19:46 [INFO] [StockScraping@840] Success LHK
+06/30/2562 18:19:46 [INFO] [Run@241] Run 229 MAX
+06/30/2562 18:19:47 [INFO] [IAAConsensusScraping@677] Success MAX
+06/30/2562 18:20:01 [INFO] [CompanyHighlights@542] Success MAX
+06/30/2562 18:20:11 [INFO] [StockScraping@840] Success MAX
+06/30/2562 18:20:11 [INFO] [Run@241] Run 230 MCS
+06/30/2562 18:20:13 [INFO] [IAAConsensusScraping@677] Success MCS
+06/30/2562 18:20:26 [INFO] [CompanyHighlights@542] Success MCS
+06/30/2562 18:20:36 [INFO] [StockScraping@840] Success MCS
+06/30/2562 18:20:36 [INFO] [Run@241] Run 231 MILL
+06/30/2562 18:20:37 [INFO] [IAAConsensusScraping@677] Success MILL
+06/30/2562 18:20:50 [INFO] [CompanyHighlights@542] Success MILL
+06/30/2562 18:20:59 [INFO] [StockScraping@840] Success MILL
+06/30/2562 18:20:59 [INFO] [Run@241] Run 232 PAP
+06/30/2562 18:21:01 [INFO] [IAAConsensusScraping@677] Success PAP
+06/30/2562 18:21:14 [INFO] [CompanyHighlights@542] Success PAP
+06/30/2562 18:21:24 [INFO] [StockScraping@840] Success PAP
+06/30/2562 18:21:24 [INFO] [Run@241] Run 233 PERM
+06/30/2562 18:21:26 [INFO] [IAAConsensusScraping@677] Success PERM
+06/30/2562 18:21:39 [INFO] [CompanyHighlights@542] Success PERM
+06/30/2562 18:21:48 [INFO] [StockScraping@840] Success PERM
+06/30/2562 18:21:48 [INFO] [Run@241] Run 234 RICH
+06/30/2562 18:21:50 [INFO] [IAAConsensusScraping@677] Success RICH
+06/30/2562 18:22:02 [INFO] [CompanyHighlights@542] Success RICH
+06/30/2562 18:22:11 [INFO] [StockScraping@840] Success RICH
+06/30/2562 18:22:11 [INFO] [Run@241] Run 235 SAM
+06/30/2562 18:22:13 [INFO] [IAAConsensusScraping@677] Success SAM
+06/30/2562 18:22:26 [INFO] [CompanyHighlights@542] Success SAM
+06/30/2562 18:22:35 [INFO] [StockScraping@840] Success SAM
+06/30/2562 18:22:35 [INFO] [Run@241] Run 236 SMIT
+06/30/2562 18:22:37 [INFO] [IAAConsensusScraping@677] Success SMIT
+06/30/2562 18:22:50 [INFO] [CompanyHighlights@542] Success SMIT
+06/30/2562 18:22:59 [INFO] [StockScraping@840] Success SMIT
+06/30/2562 18:22:59 [INFO] [Run@241] Run 237 SSI
+06/30/2562 18:23:01 [INFO] [IAAConsensusScraping@677] Success SSI
+06/30/2562 18:23:13 [INFO] [CompanyHighlights@542] Success SSI
+06/30/2562 18:23:22 [INFO] [StockScraping@840] Success SSI
+06/30/2562 18:23:22 [INFO] [Run@241] Run 238 SSSC
+06/30/2562 18:23:23 [INFO] [IAAConsensusScraping@677] Success SSSC
+06/30/2562 18:23:37 [INFO] [CompanyHighlights@542] Success SSSC
+06/30/2562 18:23:46 [INFO] [StockScraping@840] Success SSSC
+06/30/2562 18:23:46 [INFO] [Run@241] Run 239 TGPRO
+06/30/2562 18:23:47 [INFO] [IAAConsensusScraping@677] Success TGPRO
+06/30/2562 18:24:01 [INFO] [CompanyHighlights@542] Success TGPRO
+06/30/2562 18:24:10 [INFO] [StockScraping@840] Success TGPRO
+06/30/2562 18:24:10 [INFO] [Run@241] Run 240 THE
+06/30/2562 18:24:11 [INFO] [IAAConsensusScraping@677] Success THE
+06/30/2562 18:24:25 [INFO] [CompanyHighlights@542] Success THE
+06/30/2562 18:24:34 [INFO] [StockScraping@840] Success THE
+06/30/2562 18:24:34 [INFO] [Run@241] Run 241 TIW
+06/30/2562 18:24:35 [INFO] [IAAConsensusScraping@677] Success TIW
+06/30/2562 18:24:48 [INFO] [CompanyHighlights@542] Success TIW
+06/30/2562 18:24:58 [INFO] [StockScraping@840] Success TIW
+06/30/2562 18:24:58 [INFO] [Run@241] Run 242 TMT
+06/30/2562 18:25:03 [INFO] [IAAConsensusScraping@677] Success TMT
+06/30/2562 18:25:16 [INFO] [CompanyHighlights@542] Success TMT
+06/30/2562 18:25:25 [INFO] [StockScraping@840] Success TMT
+06/30/2562 18:25:25 [INFO] [Run@241] Run 243 TSTH
+06/30/2562 18:25:28 [INFO] [IAAConsensusScraping@677] Success TSTH
+06/30/2562 18:25:41 [INFO] [CompanyHighlights@542] Success TSTH
+06/30/2562 18:25:50 [INFO] [StockScraping@840] Success TSTH
+06/30/2562 18:25:50 [INFO] [Run@241] Run 244 TWP
+06/30/2562 18:25:52 [INFO] [IAAConsensusScraping@677] Success TWP
+06/30/2562 18:26:05 [INFO] [CompanyHighlights@542] Success TWP
+06/30/2562 18:26:15 [INFO] [StockScraping@840] Success TWP
+06/30/2562 18:26:15 [INFO] [Run@241] Run 245 TYCN
+06/30/2562 18:26:16 [INFO] [IAAConsensusScraping@677] Success TYCN
+06/30/2562 18:26:29 [INFO] [CompanyHighlights@542] Success TYCN
+06/30/2562 18:26:39 [INFO] [StockScraping@840] Success TYCN
+06/30/2562 18:26:39 [INFO] [Run@241] Run 246 CCP
+06/30/2562 18:26:40 [INFO] [IAAConsensusScraping@677] Success CCP
+06/30/2562 18:26:53 [INFO] [CompanyHighlights@542] Success CCP
+06/30/2562 18:27:02 [INFO] [StockScraping@840] Success CCP
+06/30/2562 18:27:02 [INFO] [Run@241] Run 247 COTTO
+06/30/2562 18:27:04 [INFO] [IAAConsensusScraping@677] Success COTTO
+06/30/2562 18:27:09 [INFO] [CompanyHighlights@542] Success COTTO
+06/30/2562 18:27:10 [ERROR] [StockScraping@803] Not scraping data from https://www.finnomena.com/stock/COTTO
+06/30/2562 18:27:19 [INFO] [StockScraping@840] Success COTTO
+06/30/2562 18:27:19 [INFO] [Run@241] Run 248 DCC
+06/30/2562 18:27:25 [INFO] [IAAConsensusScraping@677] Success DCC
+06/30/2562 18:27:39 [INFO] [CompanyHighlights@542] Success DCC
+06/30/2562 18:27:48 [INFO] [StockScraping@840] Success DCC
+06/30/2562 18:27:48 [INFO] [Run@241] Run 249 DCON
+06/30/2562 18:27:49 [INFO] [IAAConsensusScraping@677] Success DCON
+06/30/2562 18:28:02 [INFO] [CompanyHighlights@542] Success DCON
+06/30/2562 18:28:12 [INFO] [StockScraping@840] Success DCON
+06/30/2562 18:28:12 [INFO] [Run@241] Run 250 DRT
+06/30/2562 18:28:16 [INFO] [IAAConsensusScraping@677] Success DRT
+06/30/2562 18:28:29 [INFO] [CompanyHighlights@542] Success DRT
+06/30/2562 18:28:39 [INFO] [StockScraping@840] Success DRT
+06/30/2562 18:28:39 [INFO] [Run@241] Run 251 EPG
+06/30/2562 18:28:48 [INFO] [IAAConsensusScraping@677] Success EPG
+06/30/2562 18:29:01 [INFO] [CompanyHighlights@542] Success EPG
+06/30/2562 18:29:11 [INFO] [StockScraping@840] Success EPG
+06/30/2562 18:29:11 [INFO] [Run@241] Run 252 GEL
+06/30/2562 18:29:12 [INFO] [IAAConsensusScraping@677] Success GEL
+06/30/2562 18:29:26 [INFO] [CompanyHighlights@542] Success GEL
+06/30/2562 18:29:35 [INFO] [StockScraping@840] Success GEL
+06/30/2562 18:29:35 [INFO] [Run@241] Run 253 PPP
+06/30/2562 18:29:36 [INFO] [IAAConsensusScraping@677] Success PPP
+06/30/2562 18:29:50 [INFO] [CompanyHighlights@542] Success PPP
+06/30/2562 18:29:59 [INFO] [StockScraping@840] Success PPP
+06/30/2562 18:29:59 [INFO] [Run@241] Run 254 Q-CON
+06/30/2562 18:30:00 [INFO] [IAAConsensusScraping@677] Success Q-CON
+06/30/2562 18:30:13 [INFO] [CompanyHighlights@542] Success Q-CON
+06/30/2562 18:30:23 [INFO] [StockScraping@840] Success Q-CON
+06/30/2562 18:30:23 [INFO] [Run@241] Run 255 RCI
+06/30/2562 18:30:25 [INFO] [IAAConsensusScraping@677] Success RCI
+06/30/2562 18:30:38 [INFO] [CompanyHighlights@542] Success RCI
+06/30/2562 18:30:47 [INFO] [StockScraping@840] Success RCI
+06/30/2562 18:30:47 [INFO] [Run@241] Run 256 SCC
+06/30/2562 18:30:53 [INFO] [IAAConsensusScraping@677] Success SCC
+06/30/2562 18:31:06 [INFO] [CompanyHighlights@542] Success SCC
+06/30/2562 18:31:16 [INFO] [StockScraping@840] Success SCC
+06/30/2562 18:31:16 [INFO] [Run@241] Run 257 SCCC
+06/30/2562 18:31:21 [INFO] [IAAConsensusScraping@677] Success SCCC
+06/30/2562 18:31:35 [INFO] [CompanyHighlights@542] Success SCCC
+06/30/2562 18:31:45 [INFO] [StockScraping@840] Success SCCC
+06/30/2562 18:31:45 [INFO] [Run@241] Run 258 SCP
+06/30/2562 18:31:46 [INFO] [IAAConsensusScraping@677] Success SCP
+06/30/2562 18:31:59 [INFO] [CompanyHighlights@542] Success SCP
+06/30/2562 18:32:09 [INFO] [StockScraping@840] Success SCP
+06/30/2562 18:32:09 [INFO] [Run@241] Run 259 SKN
+06/30/2562 18:32:11 [INFO] [IAAConsensusScraping@677] Success SKN
+06/30/2562 18:32:19 [INFO] [CompanyHighlights@542] Success SKN
+06/30/2562 18:32:28 [INFO] [StockScraping@840] Success SKN
+06/30/2562 18:32:28 [INFO] [Run@241] Run 260 TASCO
+06/30/2562 18:32:36 [INFO] [IAAConsensusScraping@677] Success TASCO
+06/30/2562 18:32:49 [INFO] [CompanyHighlights@542] Success TASCO
+06/30/2562 18:32:59 [INFO] [StockScraping@840] Success TASCO
+06/30/2562 18:32:59 [INFO] [Run@241] Run 261 TCMC
+06/30/2562 18:33:02 [INFO] [IAAConsensusScraping@677] Success TCMC
+06/30/2562 18:33:15 [INFO] [CompanyHighlights@542] Success TCMC
+06/30/2562 18:33:24 [INFO] [StockScraping@840] Success TCMC
+06/30/2562 18:33:24 [INFO] [Run@241] Run 262 TOA
+06/30/2562 18:33:30 [INFO] [IAAConsensusScraping@677] Success TOA
+06/30/2562 18:33:38 [INFO] [CompanyHighlights@542] Success TOA
+06/30/2562 18:33:48 [INFO] [StockScraping@840] Success TOA
+06/30/2562 18:33:48 [INFO] [Run@241] Run 263 TPIPL
+06/30/2562 18:33:54 [INFO] [IAAConsensusScraping@677] Success TPIPL
+06/30/2562 18:34:07 [INFO] [CompanyHighlights@542] Success TPIPL
+06/30/2562 18:34:17 [INFO] [StockScraping@840] Success TPIPL
+06/30/2562 18:34:17 [INFO] [Run@241] Run 264 UMI
+06/30/2562 18:34:19 [INFO] [IAAConsensusScraping@677] Success UMI
+06/30/2562 18:34:32 [INFO] [CompanyHighlights@542] Success UMI
+06/30/2562 18:34:41 [INFO] [StockScraping@840] Success UMI
+06/30/2562 18:34:41 [INFO] [Run@241] Run 265 VNG
+06/30/2562 18:34:48 [INFO] [IAAConsensusScraping@677] Success VNG
+06/30/2562 18:35:01 [INFO] [CompanyHighlights@542] Success VNG
+06/30/2562 18:35:10 [INFO] [StockScraping@840] Success VNG
+06/30/2562 18:35:10 [INFO] [Run@241] Run 266 WIIK
+06/30/2562 18:35:12 [INFO] [IAAConsensusScraping@677] Success WIIK
+06/30/2562 18:35:25 [INFO] [CompanyHighlights@542] Success WIIK
+06/30/2562 18:35:35 [INFO] [StockScraping@840] Success WIIK
+06/30/2562 18:35:35 [INFO] [Run@241] Run 267 A
+06/30/2562 18:35:37 [INFO] [IAAConsensusScraping@677] Success A
+06/30/2562 18:35:50 [INFO] [CompanyHighlights@542] Success A
+06/30/2562 18:35:59 [INFO] [StockScraping@840] Success A
+06/30/2562 18:35:59 [INFO] [Run@241] Run 268 AMATA
+06/30/2562 18:36:14 [INFO] [IAAConsensusScraping@677] Success AMATA
+06/30/2562 18:36:28 [INFO] [CompanyHighlights@542] Success AMATA
+06/30/2562 18:36:38 [INFO] [StockScraping@840] Success AMATA
+06/30/2562 18:36:38 [INFO] [Run@241] Run 269 AMATAV
+06/30/2562 18:36:39 [INFO] [IAAConsensusScraping@677] Success AMATAV
+06/30/2562 18:36:53 [INFO] [CompanyHighlights@542] Success AMATAV
+06/30/2562 18:37:03 [INFO] [StockScraping@840] Success AMATAV
+06/30/2562 18:37:03 [INFO] [Run@241] Run 270 ANAN
+06/30/2562 18:37:16 [INFO] [IAAConsensusScraping@677] Success ANAN
+06/30/2562 18:37:29 [INFO] [CompanyHighlights@542] Success ANAN
+06/30/2562 18:37:39 [INFO] [StockScraping@840] Success ANAN
+06/30/2562 18:37:39 [INFO] [Run@241] Run 271 AP
+06/30/2562 18:37:56 [INFO] [IAAConsensusScraping@677] Success AP
+06/30/2562 18:38:09 [INFO] [CompanyHighlights@542] Success AP
+06/30/2562 18:38:18 [INFO] [StockScraping@840] Success AP
+06/30/2562 18:38:18 [INFO] [Run@241] Run 272 APEX
+06/30/2562 18:38:20 [INFO] [IAAConsensusScraping@677] Success APEX
+06/30/2562 18:38:33 [INFO] [CompanyHighlights@542] Success APEX
+06/30/2562 18:38:42 [INFO] [StockScraping@840] Success APEX
+06/30/2562 18:38:42 [INFO] [Run@241] Run 273 AQ
+06/30/2562 18:38:43 [INFO] [IAAConsensusScraping@677] Success AQ
+06/30/2562 18:38:57 [INFO] [CompanyHighlights@542] Success AQ
+06/30/2562 18:39:07 [INFO] [StockScraping@840] Success AQ
+06/30/2562 18:39:07 [INFO] [Run@241] Run 274 BLAND
+06/30/2562 18:39:08 [INFO] [IAAConsensusScraping@677] Success BLAND
+06/30/2562 18:39:21 [INFO] [CompanyHighlights@542] Success BLAND
+06/30/2562 18:39:30 [INFO] [StockScraping@840] Success BLAND
+06/30/2562 18:39:30 [INFO] [Run@241] Run 275 BROCK
+06/30/2562 18:39:32 [INFO] [IAAConsensusScraping@677] Success BROCK
+06/30/2562 18:39:45 [INFO] [CompanyHighlights@542] Success BROCK
+06/30/2562 18:39:55 [INFO] [StockScraping@840] Success BROCK
+06/30/2562 18:39:55 [INFO] [Run@241] Run 276 CGD
+06/30/2562 18:39:56 [INFO] [IAAConsensusScraping@677] Success CGD
+06/30/2562 18:40:10 [INFO] [CompanyHighlights@542] Success CGD
+06/30/2562 18:40:19 [INFO] [StockScraping@840] Success CGD
+06/30/2562 18:40:19 [INFO] [Run@241] Run 277 CI
+06/30/2562 18:40:21 [INFO] [IAAConsensusScraping@677] Success CI
+06/30/2562 18:40:34 [INFO] [CompanyHighlights@542] Success CI
+06/30/2562 18:40:44 [INFO] [StockScraping@840] Success CI
+06/30/2562 18:40:44 [INFO] [Run@241] Run 278 CPN
+06/30/2562 19:32:21 [INFO] [Run@204] Start FindStock
+06/30/2562 19:32:23 [INFO] [Run@241] Run 0 CHOTI
+06/30/2562 19:32:28 [INFO] [IAAConsensusScraping@677] Success CHOTI
+06/30/2562 19:32:42 [INFO] [CompanyHighlights@542] Success CHOTI
+06/30/2562 19:32:54 [INFO] [StockScraping@840] Success CHOTI
+06/30/2562 19:32:54 [INFO] [Run@241] Run 1 EE
+06/30/2562 19:32:55 [INFO] [IAAConsensusScraping@677] Success EE

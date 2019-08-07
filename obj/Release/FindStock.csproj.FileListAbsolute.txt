@@ -16,3 +16,8 @@ D:\Code\FindStock\obj\Release\FindStock.csproj.CoreCompileInputs.cache
 D:\Code\FindStock\obj\Release\FindStock.csproj.CopyComplete
 D:\Code\FindStock\obj\Release\FindStock.exe
 D:\Code\FindStock\obj\Release\FindStock.pdb
+D:\Code\findStock\bin\Release\MySql.Data.dll
+D:\Code\findStock\bin\Release\Google.Protobuf.dll
+D:\Code\findStock\bin\Release\BouncyCastle.Crypto.dll
+D:\Code\findStock\bin\Release\MySql.Data.xml
+D:\Code\findStock\obj\Release\FindStock.csprojAssemblyReference.cache
